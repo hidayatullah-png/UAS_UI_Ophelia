@@ -1,0 +1,38 @@
+/* color pallate */
+:root {
+    --white: #FFFFFF;
+    --text-color: #100E11;
+    --text-secondary-color: #706B68;
+    --line: #C0B5B3;
+    --accent-color: #490206;
+    --footer: #2C0001;
+}
+
+/*global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--white);
+    color: var(--text-color);
+    font-family: 'Inter', Arial, sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', Georgia, serif;
+    letter-spacing: 0.5px;
+    color: var(--text-color);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
