@@ -1,0 +1,35 @@
+[
+    {
+        "id": 1,
+        "title": "The Evolution of Gothic Lolita: From Harajuku to Modern Elegance",
+        "author": "Ophelia Curator",
+        "date": "May 10, 2026",
+        "category": "Fashion History",
+        "image": "assets/article1.png",
+        "readTime": "5 min read",
+        "summary": "Discover how the fusion of traditional Victorian mourning attire and Japanese subculture created one of the most iconic alternative fashion aesthetics in the world.",
+        "content": "Gothic Lolita fashion is a unique subculture that emerged from the streets of Harajuku, Tokyo, during the late 1990s. It beautifully marries the dark, melancholic aesthetics of Western Gothic subculture with the cute, doll-like silhouettes of traditional Japanese Lolita fashion. Unlike Sweet Lolita, which focuses on pastel colors and whimsical motifs, Gothic Lolita relies heavily on deep blacks, rich navy blues, and dark burgundy. Key elements include structured corsets, layered petticoats to create the signature bell-shaped skirt, and intricate lace trims. Today, the style has evolved into a global movement of self-expression, emphasizing modern elegance, high-quality tailoring, and pride in alternative identity."
+    },
+    {
+        "id": 2,
+        "title": "Preserving the Dark: Essential Care Tips for Velvet and Lace",
+        "author": "Goth Care Expert",
+        "date": "April 28, 2026",
+        "category": "Maintenance Guide",
+        "image": "assets/article2.png",
+        "readTime": "4 min read",
+        "summary": "Learn the proper techniques to clean, store, and maintain your delicate gothic pieces without damaging their intricate brocades and luxury fabrics.",
+        "content": "Alternative garments, especially Gothic and Lolita dresses, are investments that require specialized care. Luxury fabrics like heavy cotton velvet, delicate battenberg lace, and structured brocades can easily be ruined by standard washing machines. First, always check the care label, but when in doubt, hand-washing with cold water and a mild detergent is the safest route. Never wring out velvet dresses; instead, press the water out gently using a clean towel. For storage, always hang heavy gowns on padded hangers to maintain shoulder structures, and store them in breathable garment bags away from direct sunlight to prevent the rich black dye from fading into an unwanted brown tint."
+    },
+    {
+        "id": 3,
+        "title": "Demystifying Ouji Fashion: The Prince Aesthetic Explained",
+        "author": "Subculture Stylist",
+        "date": "March 15, 2026",
+        "category": "Style Guide",
+        "image": "assets/article3.png",
+        "readTime": "6 min read",
+        "summary": "An introductory guide to Ouji-kei, the masculine counterpart to Lolita fashion, focusing on essential silhouettes, layering, and accessories.",
+        "content": "Ouji fashion, often translated as 'Prince fashion' or called 'Kodona', is the masculine counterpart to the Lolita fashion subculture. While Lolita draws inspiration from Victorian dolls and girls' dresses, Ouji is inspired by the attire of young Victorian boys and aristocratic gentlemen. The silhouette focuses on structured upper garments, such as tailored waistcoats, vests, and double-breasted blazers, paired with distinctive lower pieces like pumpkin pants, knickerbockers, or straight-leg trousers ending at the knee. Layering is key to achieving a successful Ouji coordination (coord). Adding jabots, lace cravats, and metallic pocket chains will instantly elevate the look, making it a perfect blend of high-fashion tailoring and dark alternative edge."
+    }
+]

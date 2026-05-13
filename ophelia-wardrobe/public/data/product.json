@@ -1,0 +1,92 @@
+[
+    {
+        "id": 1,
+        "name": "Midnight Elegance Dress",
+        "price": 249.99,
+        "category": "Gothic Lolita",
+        "image": "assets/dress1.png",
+        "stock": 5,
+        "description": "A premium elegant gothic dress with beautiful dark frills, built-in corset structure, and a dramatic silhouette perfect for alternative subculture gatherings."
+    },
+    {
+        "id": 2,
+        "name": "Gothic Victorian Gown",
+        "price": 199.00,
+        "category": "Victorian Goth",
+        "image": "assets/dress2.png",
+        "stock": 3,
+        "description": "Ornate Victorian-inspired lace gown featuring high-quality velvet, adjustable back lacings, and elegant multi-layered cascading ruffles."
+    },
+    {
+        "id": 3,
+        "name": "Modern Ouji-Style Suit",
+        "price": 159.00,
+        "category": "Ouji Culture",
+        "image": "assets/dress3.png",
+        "stock": 8,
+        "description": "A sharp, tailored royal prince ensemble. Includes a structured vest with silver metallic hardware details and drop-waist alternative trousers."
+    },
+    {
+        "id": 4,
+        "name": "Bloodied Lolita Dress",
+        "price": 120.00,
+        "category": "Sweet Lolita",
+        "image": "assets/dress4.png",
+        "stock": 12,
+        "description": "A stunning and unique doll-like printed dress. Features a signature aesthetic design combining innocent frills with subculture dark undertones."
+    },
+    {
+        "id": 5,
+        "name": "White Ouji Lolita Long Waistcoat",
+        "price": 150.00,
+        "category": "Ouji Culture",
+        "image": "assets/dress5.png",
+        "stock": 4,
+        "description": "An elegant, long-cut white vest piece blending high-fashion aristocratic tailoring with premium gothic community comfort elements."
+    },
+    {
+        "id": 6,
+        "name": "Devil Ruffle Sleeves Victoria..",
+        "price": 299.00,
+        "category": "Victorian Goth",
+        "image": "assets/dress6.png",
+        "stock": 2,
+        "description": "A masterpiece of alternative fashion featuring dramatic flared devil bell sleeves, heavy tier brocade laces, and unmatched dark elegance styling."
+    },
+    {
+        "id": 7,
+        "name": "Devil Ruffle Sleeves Victoria..",
+        "price": 299.00,
+        "category": "Victorian Goth",
+        "image": "assets/dress6.png",
+        "stock": 2,
+        "description": "A masterpiece of alternative fashion featuring dramatic flared devil bell sleeves, heavy tier brocade laces, and unmatched dark elegance styling."
+    },
+    {
+        "id": 8,
+        "name": "Devil Ruffle Sleeves Victoria..",
+        "price": 299.00,
+        "category": "Victorian Goth",
+        "image": "assets/dress6.png",
+        "stock": 2,
+        "description": "A masterpiece of alternative fashion featuring dramatic flared devil bell sleeves, heavy tier brocade laces, and unmatched dark elegance styling."
+    },
+    {
+        "id": 9,
+        "name": "Devil Ruffle Sleeves Victoria..",
+        "price": 299.00,
+        "category": "Victorian Goth",
+        "image": "assets/dress6.png",
+        "stock": 2,
+        "description": "A masterpiece of alternative fashion featuring dramatic flared devil bell sleeves, heavy tier brocade laces, and unmatched dark elegance styling."
+    },
+    {
+        "id": 10,
+        "name": "Devil Ruffle Sleeves Victoria..",
+        "price": 299.00,
+        "category": "Victorian Goth",
+        "image": "assets/dress6.png",
+        "stock": 2,
+        "description": "A masterpiece of alternative fashion featuring dramatic flared devil bell sleeves, heavy tier brocade laces, and unmatched dark elegance styling."
+    }
+]

@@ -375,6 +375,49 @@ header h1 {
     cursor: pointer;
 }
 
+/* pagination */
+.pagination-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.page-btn {
+    background-color: transparent;
+    color: #333;
+    /* Sesuaikan warna font utama kamu */
+    border: 1px solid #ccc;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.page-btn:hover:not(:disabled) {
+    background-color: #333;
+    /* Warna gelap gotik saat di-hover */
+    color: #fff;
+    border-color: #333;
+}
+
+.page-btn.active-page {
+    background-color: #333;
+    /* Tanda halaman aktif */
+    color: #fff;
+    border-color: #333;
+}
+
+.page-btn:disabled {
+    color: #ccc;
+    border-color: #eee;
+    cursor: not-allowed;
+}
+
 /*footer */
 footer {
     background-color: var(--footer);
@@ -406,4 +449,271 @@ footer p {
     font-size: 12px;
     color: var(--text-secondary-color);
     letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   RESPONSIVE / MOBILE
+   ========================================================================== */
+
+/* Tablet (max 1024px) */
+@media (max-width: 1024px) {
+    .hero {
+        height: 80vh;
+        padding: 60px 5% 0 5%;
+    }
+
+    .hero-section h2 {
+        font-size: 36px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .collection-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 200px);
+    }
+
+    .collection-card.big-card {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+}
+
+/* Mobile (max 768px) */
+@media (max-width: 768px) {
+
+    /* navbar */
+    header .logo {
+        padding: 12px 4%;
+    }
+
+    header h1 {
+        font-size: 16px;
+    }
+
+    .nav-links {
+        display: none;
+        /* sembunyikan nav link di mobile */
+    }
+
+    .nav-icons {
+        gap: 18px;
+    }
+
+    .nav-icons i {
+        font-size: 16px;
+    }
+
+    /* hero */
+    .hero {
+        height: 60vh;
+        padding: 40px 5% 0 5%;
+        justify-content: center;
+        text-align: center;
+        background-position: center top;
+    }
+
+    .hero-section {
+        max-width: 100%;
+    }
+
+    .hero-section h2 {
+        font-size: 26px;
+    }
+
+    .hero-section p {
+        font-size: 13px;
+    }
+
+    /* new arrivals */
+    .new-arrivals {
+        padding: 40px 4%;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+        /* 1 kolom di mobile */
+        gap: 20px;
+    }
+
+    .product-card img {
+        height: 260px;
+    }
+
+    /* ads banner */
+    .ads-banner {
+        padding: 50px 15px;
+    }
+
+    .ads-banner h2 {
+        font-size: 22px;
+    }
+
+    /* collections */
+    .collections {
+        padding: 40px 4%;
+    }
+
+    .collection-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        gap: 12px;
+    }
+
+    .collection-card {
+        height: 180px;
+    }
+
+    .collection-card.big-card {
+        grid-column: span 1;
+        grid-row: span 1;
+        height: 220px;
+    }
+
+    /* footer */
+    .footer-links {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* 1. Navigasi Header Mobile */
+    header .logo {
+        flex-direction: column;
+        /* Membuat Logo, Menu, dan Ikon tersusun rapi ke bawah jika layar terlalu sempit */
+        gap: 15px;
+        padding: 15px 2%;
+        text-align: center;
+    }
+
+    .nav-links {
+        gap: 15px;
+        /* Mempersempit jarak antar menu agar muat di layar HP */
+    }
+
+    .nav-links a {
+        font-size: 11px;
+        /* Memperkecil font menu */
+        letter-spacing: 1px;
+    }
+
+    /* 2. Hero Section Mobile (Sesuai Konsep Kamu) */
+    .hero {
+        background-image: url('assets/Goth.png');
+        background-size: cover;
+        background-position: top center;
+        height: 65vh;
+        /* Sedikit disesuaikan agar proporsional di HP */
+        padding: 0 5%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+
+    .hero-section {
+        max-width: 100%;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+        /* Gradasi bayangan di bawah teks */
+        width: 100%;
+        padding: 30px 15px;
+    }
+
+    .hero-section h2 {
+        font-size: 22px;
+        /* Diperkecil dari 24px agar tidak memakan banyak baris */
+        color: var(--white);
+    }
+
+    .hero-section p {
+        font-size: 12px;
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 20px;
+    }
+
+    .btn-cta {
+        padding: 10px 25px;
+        font-size: 11px;
+    }
+
+    /* 3. New Arrivals Grid Mobile (Penyelamat Layout 2 Kolom) */
+    .new-arrivals {
+        padding: 40px 4%;
+        /* Memperkecil padding luar */
+    }
+
+    .new-arrivals h2 {
+        font-size: 20px;
+        margin-bottom: 20px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        /* Mengubah otomatis jadi 2 kolom sejajar di HP */
+        gap: 15px;
+        /* Mempersempit jarak antar produk agar padat estetik */
+    }
+
+    .product-card {
+        padding: 8px;
+        /* Memperkecil bingkai putih kartu */
+    }
+
+    .product-card img {
+        height: 240px;
+        /* Menurunkan tinggi foto agar rasionya pas di layout 2 kolom mobile */
+        margin-bottom: 10px;
+    }
+
+    .product-card h3 {
+        font-size: 13px;
+        /* Mengecilkan teks judul baju */
+    }
+
+    .product-card p {
+        font-size: 13px;
+        /* Mengecilkan teks harga */
+        margin-bottom: 10px;
+    }
+
+    .btn-view {
+        padding: 8px 0;
+        font-size: 10px;
+    }
+
+    /* 4. Ads Banner Mobile */
+    .ads-banner {
+        padding: 60px 15px;
+    }
+
+    .ads-banner h2 {
+        font-size: 18px;
+        /* Sesuai draf kamu, ukuran ini sudah pas di HP */
+    }
+
+    .ads-banner p {
+        font-size: 13px;
+    }
+
+    .collection-grid {
+        grid-template-columns: 1fr;
+        /* Mengubah otomatis jadi 1 kolom sejajar di HP */
+        gap: 15px;
+    }
+
+    .collection-card {
+        height: 180px;
+        /* Menurunkan tinggi kartu koleksi agar proporsional di HP */
+    }
+
+    /* 6. Footer Mobile */
+    .footer-links {
+        flex-wrap: wrap;
+        /* Jika menu di footer terlalu panjang, otomatis melompat rapi ke baris baru */
+        gap: 20px;
+    }
 }
