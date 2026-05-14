@@ -182,8 +182,8 @@ header h1 {
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
 }
 
 .product-card {
@@ -204,7 +204,7 @@ header h1 {
 
 .product-card img {
     width: 100%;
-    height: 340px;
+    height: 320px;
     object-fit: cover;
     margin-bottom: 15px;
     background-color: #F0F0F0;
@@ -388,7 +388,6 @@ header h1 {
 .page-btn {
     background-color: transparent;
     color: #333;
-    /* Sesuaikan warna font utama kamu */
     border: 1px solid #ccc;
     padding: 10px 16px;
     font-size: 14px;
@@ -400,14 +399,12 @@ header h1 {
 
 .page-btn:hover:not(:disabled) {
     background-color: #333;
-    /* Warna gelap gotik saat di-hover */
     color: #fff;
     border-color: #333;
 }
 
 .page-btn.active-page {
     background-color: #333;
-    /* Tanda halaman aktif */
     color: #fff;
     border-color: #333;
 }
@@ -416,6 +413,270 @@ header h1 {
     color: #ccc;
     border-color: #eee;
     cursor: not-allowed;
+}
+
+/*shop page add-ons*/
+.promo-banner {
+    background-color: var(--accent-color);
+    color: var(--white);
+    text-align: center;
+    padding: 10px 5%;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.promo-banner p {
+    margin: 0;
+    font-size: 12px;
+}
+
+.promo-banner a {
+    color: var(--white);
+    margin: 0;
+    font-size: 12px;
+}
+
+.close-banner-btn {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.close-banner-btn:hover {
+    transform: translateY(-50%) scale(1.2);
+    opacity: 0.8;
+}
+
+.category-burger-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px 20px 40px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.burger-btn {
+    display: flex;
+    flex: 1;
+    justify-content: flex-start;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--text-secondary-color);
+    font-size: 20px;
+}
+
+.category-burger-btn h3 {
+    flex: 2;
+    font-size: 22px;
+    font-weight: 600;
+    margin: 0;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+.filter-btn {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    background: none;
+    border: none;
+    font-size: 15px;
+    text-transform: uppercase;
+    cursor: pointer;
+    letter-spacing: 1px;
+    color: var(--text-secondary-color);
+}
+
+/*detail produk*/
+.product-detail-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 40px;
+}
+
+.product-detail-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.detail-gallery-pb {
+    width: 100%;
+}
+
+.product-image img {
+    width: 100%;
+    max-height: 650px;
+    object-fit: cover;
+    display: block;
+    border: 1px solid #ccc;
+    padding: 12px;
+    background: #fff;
+    box-sizing: border-box;
+}
+
+/*info detail */
+
+.detail-info-box {
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.btn-back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #555;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    transition: color 0.3s;
+}
+
+.btn-back-link:hover {
+    color: var(--accent-color);
+}
+
+/* Bagian Judul dan Harga */
+.info-header .collection-tag {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #999;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 12px;
+}
+
+.detail-info-box h2 {
+    font-size: 28px;
+    font-weight: 600;
+    color: #111;
+    margin: 0;
+}
+
+.wishlist-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s ease;
+}
+
+.active-wishlist-btn .active-heart {
+    color: var(--accent-color)!important;
+}
+
+.wishlist-btn:hover {
+    color: var(--accent-color);
+}
+
+.detail-price {
+    font-size: 22px;
+    font-weight: 700;
+    color: #000;
+    margin-bottom: 30px;
+}
+
+/* Bagian Deskripsi Teks */
+.detail-description {
+    color: #666;
+    line-height: 1.8;
+    font-size: 14px;
+    margin-bottom: 35px;
+    border-bottom: 1px solid #f2f2f2;
+    padding-bottom: 30px;
+}
+
+/* Bagian Pilihan Ukuran */
+.size-selector .size-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.size-header h4 {
+    margin: 0;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.size-guide-link {
+    font-size: 12px;
+    color: var(--text-secondary-color);
+    text-decoration: underline;
+}
+
+.size-options {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 45px;
+}
+
+.size-options button {
+    background: var(--white);
+    border: 1px solid var(--line);
+    padding: 10px 22px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 13px;
+    transition: all 0.3s ease;
+}
+
+/* Gaya tombol ukuran saat aktif */
+.size-options button:hover,
+.size-options button.active {
+    background: var(--accent-color);
+    color: var(--white);
+    border-color: var(--accent-color);
+}
+
+/* BAGIAN TOMBOL ADD TO CART (UTAMA DI BAWAH) */
+.btn-add-to-cart {
+    width: 100%;
+    background: var(--text-color);
+    color: var(--white);
+    border: none;
+    padding: 18px;
+    font-size: 15px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.3s ease;
+}
+
+/* Efek Hover Tombol Aksi */
+.btn-add-to-cart:hover {
+    background: var(--line);
+    color: var(--white);
 }
 
 /*footer */

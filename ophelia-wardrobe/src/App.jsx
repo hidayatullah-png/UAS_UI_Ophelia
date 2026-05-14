@@ -1,15 +1,22 @@
+import { useState } from "react";
 import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
 import Catalog from "./pages/Catalog";
-
-// Halaman placeholder sementara untuk detail produk
-function ProductDetailPlaceholder() {
-  return <div style={{ padding: "50px", textAlign: "center" }}><h2>Laman Detail Produk (Coming Soon)</h2></div>;
-}
+import ProductDetail from "./pages/ProductDetail";
 
 export default function App() {
+  const [showBanner, setShowBanner] = useState(true);
   return (
     <Router>
-      {/* NAVBAR REUSABLE DI REACT */}
+      {showBanner && (
+        <div class='promo-banner'>
+          <p>Halloween Discount: Diskon 5% dengan 2 barang, diskon 10% dengan 3 atau lebih |{" "}
+            <a href='#Halloween'>LIHAT PILIHAN</a>
+          </p>
+          <button className="close-banner-btn" onClick={() => setShowBanner(false)}>
+            <i className="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      )}
       <header>
         <div class="logo">
           <h1>Ophelia</h1>
@@ -29,7 +36,7 @@ export default function App() {
       {/* SISTEM PERPINDAHAN 12 HALAMAN */}
       <Routes>
         <Route path="/" element={<Catalog />} />
-        <Route path="/product/:id" element={<ProductDetailPlaceholder />} />
+        <Route path="/product/:id" element={<ProductDetail />} />
       </Routes>
     </Router>
   );

@@ -55,19 +55,19 @@
     },
     {
         "id": 7,
-        "name": "Devil Ruffle Sleeves Victoria..",
+        "name": "Gothic Feathered Suit",
         "price": 299.00,
-        "category": "Victorian Goth",
-        "image": "assets/dress6.png",
+        "category": "Gothic Suit",
+        "image": "assets/dress7.png",
         "stock": 2,
         "description": "A masterpiece of alternative fashion featuring dramatic flared devil bell sleeves, heavy tier brocade laces, and unmatched dark elegance styling."
     },
     {
         "id": 8,
-        "name": "Devil Ruffle Sleeves Victoria..",
+        "name": "Halloween Themed Rose And Skull Dress",
         "price": 299.00,
         "category": "Victorian Goth",
-        "image": "assets/dress6.png",
+        "image": "assets/dress8.png",
         "stock": 2,
         "description": "A masterpiece of alternative fashion featuring dramatic flared devil bell sleeves, heavy tier brocade laces, and unmatched dark elegance styling."
     },
@@ -76,16 +76,7 @@
         "name": "Devil Ruffle Sleeves Victoria..",
         "price": 299.00,
         "category": "Victorian Goth",
-        "image": "assets/dress6.png",
-        "stock": 2,
-        "description": "A masterpiece of alternative fashion featuring dramatic flared devil bell sleeves, heavy tier brocade laces, and unmatched dark elegance styling."
-    },
-    {
-        "id": 10,
-        "name": "Devil Ruffle Sleeves Victoria..",
-        "price": 299.00,
-        "category": "Victorian Goth",
-        "image": "assets/dress6.png",
+        "image": "assets/dress9.png",
         "stock": 2,
         "description": "A masterpiece of alternative fashion featuring dramatic flared devil bell sleeves, heavy tier brocade laces, and unmatched dark elegance styling."
     }

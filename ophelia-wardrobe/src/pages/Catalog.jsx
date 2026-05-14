@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function Catalog() {
     const [products, setProducts] = useState([]);
-
-    const [currentPage, setCurrentPage] = useState(1); // Halaman aktif saat ini
-    const productsPerPage = 6; // Batasan jumlah produk per halaman
+    const [currentPage, setCurrentPage] = useState(1);
+    const productsPerPage = 8;
 
     useEffect(() => {
         fetch("/data/product.json")
@@ -14,25 +14,28 @@ export default function Catalog() {
     }, []);
 
     // 2. LOGIKA MATEMATIKA PAGINATION
-    const indexOfLastProduct = currentPage * productsPerPage; 
-    const indexOfFirstProduct = indexOfLastProduct - productsPerPage; 
-
-    // Potong data produk asli, ambil hanya 9 data sesuai halaman saat ini
+    const indexOfLastProduct = currentPage * productsPerPage;
+    const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
     const currentProducts = products.slice(indexOfFirstProduct, indexOfLastProduct);
-
-    // Hitung total halaman yang dibutuhkan
     const totalPages = Math.ceil(products.length / productsPerPage);
 
     // Fungsi untuk berpindah halaman
     const changePage = (pageNumber) => {
         setCurrentPage(pageNumber);
-        // Efek estetik: Otomatis scroll kembali ke atas katalog setelah klik ganti halaman
         window.scrollTo({ top: 0, behavior: "smooth" });
     };
 
     return (
         <div className="new-arrivals">
-            <h2>Ophelia's Dynamic Catalog</h2>
+            <div className="category-burger-btn">
+                <button className="burger-btn">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </button>
+                <h3>Ophelia's Dynamic Catalog</h3>
+                <button className="filter-btn">
+                    Filter
+                </button>
+            </div>
 
             {/* Grid Produk hanya memetakan 9 produk yang sudah dipotong */}
             <div className="product-grid">
@@ -47,8 +50,6 @@ export default function Catalog() {
                     </div>
                 ))}
             </div>
-
-            {/* 3. TOMBOL POINTER HALAMAN (Hanya muncul jika total halaman lebih dari 1) */}
             {totalPages > 1 && (
                 <div className="pagination-container">
                     {/* Tombol Previous */}
