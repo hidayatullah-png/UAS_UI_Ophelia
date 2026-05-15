@@ -6,7 +6,8 @@
         "category": "Gothic Lolita",
         "image": "assets/dress1.png",
         "stock": 5,
-        "description": "A premium elegant gothic dress with beautiful dark frills, built-in corset structure, and a dramatic silhouette perfect for alternative subculture gatherings."
+        "description": "A premium elegant gothic dress with beautiful dark frills, built-in corset structure, and a dramatic silhouette perfect for alternative subculture gatherings.",
+        "model": "Height 177 cm and size M"
     },
     {
         "id": 2,
@@ -60,7 +61,7 @@
         "category": "Gothic Suit",
         "image": "assets/dress7.png",
         "stock": 2,
-        "description": "A masterpiece of alternative fashion featuring dramatic flared devil bell sleeves, heavy tier brocade laces, and unmatched dark elegance styling."
+        "description": "A statement gothic suit with feathered shoulder accents, intricate embroidery, and a tailored fit that exudes dark sophistication and alternative style."
     },
     {
         "id": 8,
@@ -69,7 +70,7 @@
         "category": "Victorian Goth",
         "image": "assets/dress8.png",
         "stock": 2,
-        "description": "A masterpiece of alternative fashion featuring dramatic flared devil bell sleeves, heavy tier brocade laces, and unmatched dark elegance styling."
+        "description": "A hauntingly beautiful dress adorned with rose and skull motifs, perfect for Halloween or any gothic occasion. Features a dramatic silhouette and intricate detailing for a truly unique look."
     },
     {
         "id": 9,

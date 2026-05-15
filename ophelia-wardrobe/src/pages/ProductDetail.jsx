@@ -1,16 +1,17 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 
-export default function ProductDetail() {
+export default function ProductDetail({ addToCart, toggleWishlist, wishlistItems }) {
     const { id } = useParams();
     const [product, setProduct] = useState(null);
     const [loading, setLoading] = useState(true);
 
-    const [isWishlist, setIsWishlist] = useState(false);
+    const isInWishlist = wishlistItems.some((item) => item.id === product?.id);
+
     const [selectedSize, setSelectedSize] = useState("M");
 
     useEffect(() => {
-        console.log("Fetching product with ID:", id);
+        setLoading(true);
         fetch("/data/product.json")
             .then((res) => res.json())
             .then((data) => {
@@ -18,8 +19,10 @@ export default function ProductDetail() {
                 setProduct(foundProduct);
                 setLoading(false);
             })
-            .catch((err) => console.error("Gagal memuat produk:", err));
-        setLoading(false);
+            .catch((err) => {
+                console.error("Gagal memuat detail produk:", err);
+                setLoading(false);
+            });
     }, [id]);
 
     if (loading) {
@@ -49,8 +52,8 @@ export default function ProductDetail() {
                         <span className="collection-tag">Ophelia's Exclusive</span>
                         <div className="title-row">
                             <h2>{product.name}</h2>
-                            <button className="wishlist-btn" onClick={() => setIsWishlist(!isWishlist)}>
-                                <i className={`fa-regular fa-heart ${isWishlist ? 'fas' : ''}`}></i>
+                            <button className="wishlist-btn" onClick={() => toggleWishlist(product)}>
+                                <i className={isInWishlist ? 'fa-solid fa-heart active-heart' : 'fa-regular fa-heart'}></i>
                             </button>
                         </div>
                         <p className="detail-price">${product.price.toFixed(2)}</p>
@@ -58,7 +61,8 @@ export default function ProductDetail() {
                     <div className="detail-description">
                         <p>
                             {product.description ||
-                                "A beautifully crafted gothic piece, tailored for those who embrace the midnight elegance. Made from premium materials with exquisite dark accents."}
+                                "A beautifully crafted gothic piece, tailored for those who embrace the midnight elegance. Made from premium materials with exquisite dark accents."}<br></br>
+                            <span className="model-info">Model: {product.model || "Model: Height 177 cm and size M"}</span>
                         </p>
                     </div>
                     <div className="detail-options">
@@ -82,8 +86,8 @@ export default function ProductDetail() {
                     </div>
 
                     <div className="detail-actions">
-                        <button className="btn-add-to-cart">
-                            <i className="fa-solid fa-bag-shopping"></i> Add to Wardrobe
+                        <button className="btn-add-to-cart" onClick={() => addToCart(product, selectedSize)}>
+                            Add to Wardrobe
                         </button>
                     </div>
                 </div>

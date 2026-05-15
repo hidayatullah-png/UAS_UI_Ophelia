@@ -36,13 +36,14 @@ export default function Catalog() {
                     Filter
                 </button>
             </div>
+            <p className="new-arrivals-text">New Arrival</p>
 
             {/* Grid Produk hanya memetakan 9 produk yang sudah dipotong */}
             <div className="product-grid">
                 {currentProducts.map((product) => (
                     <div className="product-card" key={product.id}>
                         <img src={product.image} alt={product.name} />
-                        <h3>{product.name}</h3>
+                        <h5>{product.name}</h5>
                         <p>${product.price.toFixed(2)}</p>
                         <a href={`/shop.html#/product/${product.id}`} className="btn-view">
                             View Details

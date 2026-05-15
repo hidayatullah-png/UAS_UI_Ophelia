@@ -1,4 +1,6 @@
-/* color pallate */
+/* ==========================================================================
+   COLOR PALETTE
+   ========================================================================== */
 :root {
     --white: #FFFFFF;
     --text-color: #100E11;
@@ -8,7 +10,10 @@
     --footer: #2C0001;
 }
 
-/*global */
+
+/* ==========================================================================
+   GLOBAL
+   ========================================================================== */
 * {
     margin: 0;
     padding: 0;
@@ -25,7 +30,10 @@ body {
 
 h1,
 h2,
-h3 {
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Playfair Display', Georgia, serif;
     letter-spacing: 0.5px;
     color: var(--text-color);
@@ -37,7 +45,10 @@ a {
     transition: all 0.3s ease;
 }
 
-/*navbar */
+
+/* ==========================================================================
+   NAVBAR
+   ========================================================================== */
 header {
     background-color: var(--white);
     border-bottom: 1px solid var(--line);
@@ -55,7 +66,7 @@ header .logo {
     margin: 0 auto;
 }
 
-header h1 {
+header h4 {
     font-size: 22px;
     font-weight: 700;
     text-transform: uppercase;
@@ -68,7 +79,7 @@ header h1 {
 }
 
 .nav-links a {
-    font-size: 13px;
+    font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 1.5px;
     color: var(--text-secondary-color);
@@ -104,8 +115,8 @@ header h1 {
 .nav-icons i {
     color: var(--text-secondary-color);
     font-size: 18px;
-    transition: color 0.3s ease, transform 0.3s ease;
     cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .nav-icons a:hover i {
@@ -113,7 +124,10 @@ header h1 {
     transform: scale(1.15);
 }
 
-/*hero section */
+
+/* ==========================================================================
+   HERO SECTION
+   ========================================================================== */
 .hero {
     background-image: url('assets/Goth.png');
     background-size: 100% auto;
@@ -123,7 +137,6 @@ header h1 {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    text-align: left;
     padding: 80px 5% 0 10%;
 }
 
@@ -131,10 +144,9 @@ header h1 {
     max-width: 480px;
 }
 
-.hero-section h2 {
+.hero-section h1 {
     font-size: 44px;
     line-height: 1.2;
-    max-width: 800px;
     margin-bottom: 15px;
 }
 
@@ -158,16 +170,18 @@ header h1 {
 }
 
 .btn-cta:hover {
-    background-color: var(--accent-color);
     border-color: var(--accent-color);
     color: var(--white);
     transform: translateY(-2px);
     box-shadow: 0 6px 12px rgba(73, 2, 6, 0.3);
 }
 
-/*new arrivals */
+
+/* ==========================================================================
+   NEW ARRIVALS
+   ========================================================================== */
 .new-arrivals {
-    padding: 40px 5%;
+    padding: 30px 5%;
     max-width: 1200px;
     margin: 0 auto;
     text-align: center;
@@ -178,6 +192,12 @@ header h1 {
     margin-bottom: 15px;
     text-transform: uppercase;
     text-align: left;
+}
+
+.new-arrivals p {
+    font-size: 15px;
+    color: var(--text-secondary-color);
+    margin-bottom: 15px;
 }
 
 .product-grid {
@@ -194,6 +214,7 @@ header h1 {
     display: flex;
     flex-direction: column;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-card:hover {
@@ -215,7 +236,7 @@ header h1 {
     transform: scale(1.02);
 }
 
-.product-card h3 {
+.product-card h5 {
     font-size: 16px;
     margin-bottom: 4px;
     font-weight: 500;
@@ -247,17 +268,21 @@ header h1 {
     border-color: var(--text-color);
 }
 
-/*ads banner */
+
+/* ==========================================================================
+   ADS BANNER
+   ========================================================================== */
 .ads-banner {
     background: linear-gradient(rgba(45, 37, 38, 0.6), rgba(24, 17, 19, 0.6)), url('assets/sale.png');
-    background-size: cover no-repeat;
+    background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     padding: 70px 20px;
     text-align: center;
 }
 
 .ads-banner h2 {
-    font-size: 32px;
+    font-size: 28px;
     margin-bottom: 12px;
     text-transform: uppercase;
     color: var(--white);
@@ -267,7 +292,7 @@ header h1 {
 .ads-banner p {
     font-size: 16px;
     margin-bottom: 20px;
-    color: var(--line)
+    color: var(--line);
 }
 
 .ads-banner .btn-cta {
@@ -283,16 +308,19 @@ header h1 {
     box-shadow: 0 6px 12px rgba(255, 255, 255, 0.15);
 }
 
-/*collections */
+
+/* ==========================================================================
+   COLLECTIONS
+   ========================================================================== */
 .collections {
-    padding: 60px 5%;
+    padding: 30px 5%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .collections h2 {
     font-size: 28px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     text-transform: uppercase;
     text-align: left;
 }
@@ -300,8 +328,8 @@ header h1 {
 .collection-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 224px);
-    gap: 16px;
+    grid-template-rows: repeat(2, 220px);
+    gap: 12px;
 }
 
 .collection-card {
@@ -329,12 +357,9 @@ header h1 {
 .collection-card::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     background: linear-gradient(to bottom, transparent 40%, rgba(16, 14, 17, 0.85));
-    transition: opacity 0.3s ease;
+    transition: background 0.3s ease;
 }
 
 .collection-card:hover::after {
@@ -346,13 +371,13 @@ header h1 {
     bottom: 25px;
     left: 25px;
     z-index: 2;
-    font-size: 20px;
+    font-size: 22px;
     color: var(--white);
     transition: transform 0.3s ease;
 }
 
 .collection-card.big-card h3 {
-    font-size: 28px;
+    font-size: 26px;
     bottom: 35px;
     left: 35px;
 }
@@ -363,10 +388,7 @@ header h1 {
 
 .collection-card .btn-view {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    inset: 0;
     border: none;
     text-indent: -9999px;
     z-index: 3;
@@ -375,14 +397,92 @@ header h1 {
     cursor: pointer;
 }
 
-/* pagination */
+/* Article*/
+.articles {
+    padding: 30px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 60px;
+}
+
+.articles h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    text-align: left;
+}
+
+.article-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.article-card {
+    background-color: var(--white);
+    border: 1px solid var(--line);
+    padding: 12px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.article-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--accent-color);
+    box-shadow: 0 12px 24px rgba(73, 2, 6, 0.12);
+}
+
+.article-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 15px;
+    background-color: var(--white);
+    transition: transform 0.3s ease;
+}
+
+.article-card:hover img {
+    transform: scale(1.02);
+}
+
+.article-card h4 {
+    font-size: 16px;
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+
+.btn-read{
+    display: block;
+    padding: 10px 0;
+    background-color: transparent;
+    color: var(--text-secondary-color);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid var(--accent-color);
+    margin-top: auto;
+    text-align: center;
+}
+
+.btn-read:hover {
+    background-color: var(--text-color);
+    color: var(--white);
+    border-color: var(--text-color);
+}
+
+
+/* ==========================================================================
+   PAGINATION
+   ========================================================================== */
 .pagination-container {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    margin-top: 50px;
-    margin-bottom: 30px;
+    margin: 50px 0 30px;
 }
 
 .page-btn {
@@ -397,12 +497,7 @@ header h1 {
     transition: all 0.3s ease;
 }
 
-.page-btn:hover:not(:disabled) {
-    background-color: #333;
-    color: #fff;
-    border-color: #333;
-}
-
+.page-btn:hover:not(:disabled),
 .page-btn.active-page {
     background-color: #333;
     color: #fff;
@@ -415,7 +510,10 @@ header h1 {
     cursor: not-allowed;
 }
 
-/*shop page add-ons*/
+
+/* ==========================================================================
+   SHOP PAGE ADD-ONS
+   ========================================================================== */
 .promo-banner {
     background-color: var(--accent-color);
     color: var(--white);
@@ -425,15 +523,11 @@ header h1 {
     position: relative;
 }
 
-.promo-banner p {
-    margin: 0;
-    font-size: 12px;
-}
-
+.promo-banner p,
 .promo-banner a {
-    color: var(--white);
     margin: 0;
     font-size: 12px;
+    color: var(--white);
 }
 
 .close-banner-btn {
@@ -458,14 +552,13 @@ header h1 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px 20px 40px;
+    padding: 20px 40px;
     width: 100%;
-    box-sizing: border-box;
 }
 
 .burger-btn {
-    display: flex;
     flex: 1;
+    display: flex;
     justify-content: flex-start;
     background: none;
     border: none;
@@ -490,18 +583,275 @@ header h1 {
     justify-content: flex-end;
     background: none;
     border: none;
-    font-size: 15px;
+    font-size: 14px;
     text-transform: uppercase;
     cursor: pointer;
     letter-spacing: 1px;
     color: var(--text-secondary-color);
 }
 
-/*detail produk*/
+/* =============================================================================
+   POP-UP SIDE CART DRAWER SYSTEM
+   ============================================================================= */
+
+/* Ikon Keranjang Header Adjust */
+.header-icon-btn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: var(--text-color);
+    position: relative;
+    padding: 0;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background-color: var(--accent-color);
+    color: var(--white);
+    font-size: 10px;
+    font-weight: 700;
+    border-radius: 50%;
+    padding: 2px 5px;
+}
+
+.cart-drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.4);
+    z-index: 9999;
+    display: flex;
+    justify-content: flex-end;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
+
+.cart-drawer-overlay.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.cart-drawer {
+    width: 360px;
+    height: 460px;
+    background-color: var(--white);
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    margin-top: 40px;
+    margin-right: 20px;
+}
+
+.cart-drawer-overlay.open .cart-drawer {
+    transform: translateX(0);
+}
+
+.cart-drawer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid var(--text-secondary-color);
+}
+
+.cart-header-tabs {
+    display: flex;
+    gap: 20px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.tab-active {
+    color: var(--text-color);
+    border-bottom: 2px solid var(--text-color);
+    padding-bottom: 5px;
+}
+
+.tab-inactive {
+    color: var(--text-secondary-color);
+    cursor: pointer;
+}
+
+.cart-close-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: var(--text-secondary-color);
+}
+
+/* NOTICE BAR */
+.cart-notice-bar {
+    background-color: var(--white);
+    padding: 12px 20px;
+    font-size: 11px;
+    border-bottom: 1px solid var(--line);
+}
+
+.cart-notice-bar a {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+/* BODY UTAMA: ITEM LIST (SCROLLABLE) */
+.cart-drawer-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 15px;
+}
+
+.cart-item-row {
+    display: flex;
+    gap: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 10px;
+}
+
+.cart-item-img img {
+    width: 80px;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border: 1px solid var(--line);
+}
+
+.cart-item-details {
+    flex: 1;
+    text-align: left;
+}
+
+.cart-item-details h4 {
+    font-size: 13px;
+    font-weight: 500;
+    margin: 0 0 5px 0;
+    color: var(--text-color);
+}
+
+.item-price {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+}
+
+.item-meta {
+    display: flex;
+    gap: 15px;
+    font-size: 12px;
+    color: var(--text-secondary-color);
+    margin-bottom: 12px;
+}
+
+.cart-item-actions {
+    display: flex;
+    gap: 15px;
+}
+
+.item-action-btn {
+    background: none;
+    border: none;
+    color: var(--line);
+    cursor: pointer;
+    font-size: 15px;
+    padding: 0;
+    transition: color 0.2s;
+}
+
+.item-action-btn:hover {
+    color: var(--accent-color);
+}
+
+/* FOOTER TOTAL & CHECKOUT BUTTON */
+.cart-drawer-footer {
+    border-top: 1px solid var(--line);
+    padding: 15px;
+    background-color: var(--white);
+}
+
+.promo-code-trigger {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    color: var(--text-secondary-color);
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--line);
+    cursor: pointer;
+}
+
+.shipping-info-alert {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    padding: 15px 0;
+}
+
+.shipping-info-alert a {
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.cart-total-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    padding: 15px 0 20px 0;
+}
+
+.cart-total-row strong {
+    font-size: 16px;
+}
+
+/* TOMBOL HITAM MINIMALIS PROSES PESANAN */
+.btn-process-checkout {
+    width: 100%;
+    background-color: var(--text-color);
+    color: var(--white);
+    border: none;
+    padding: 16px;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-process-checkout:hover {
+    background-color: var(--accent-color);
+    color: var(--white);
+}
+
+.empty-cart-message {
+    text-align: center;
+    color: var(--line);
+    font-size: 13px;
+    padding-top: 40px;
+}
+
+/* ==========================================================================
+   PRODUCT DETAIL
+   ========================================================================== */
 .product-detail-container {
     max-width: 1200px;
     margin: 40px auto;
     padding: 0 40px;
+}
+
+.detail-gallery-pb {
+    justify-content: space-between;
+    gap: 5px;
+    margin-bottom: 30px;
+    margin-left: 90px;
+    display: inline-flex;
 }
 
 .product-detail-wrapper {
@@ -511,22 +861,16 @@ header h1 {
     align-items: start;
 }
 
-.detail-gallery-pb {
-    width: 100%;
-}
-
 .product-image img {
     width: 100%;
     max-height: 650px;
     object-fit: cover;
     display: block;
-    border: 1px solid #ccc;
+    border: 1px solid var(--line);
     padding: 12px;
-    background: #fff;
+    background: var(--white);
     box-sizing: border-box;
 }
-
-/*info detail */
 
 .detail-info-box {
     display: flex;
@@ -538,11 +882,10 @@ header h1 {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    color: #555;
-    text-decoration: none;
-    font-size: 13px;
+    color: var(--text-secondary-color);
+    font-size: 12px;
     font-weight: 600;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     transition: color 0.3s;
 }
 
@@ -550,12 +893,11 @@ header h1 {
     color: var(--accent-color);
 }
 
-/* Bagian Judul dan Harga */
 .info-header .collection-tag {
-    font-size: 11px;
+    font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #999;
+    color: var(--line);
     display: block;
     margin-bottom: 8px;
 }
@@ -571,7 +913,7 @@ header h1 {
 .detail-info-box h2 {
     font-size: 28px;
     font-weight: 600;
-    color: #111;
+    color: var(--text-color);
     margin: 0;
 }
 
@@ -580,36 +922,38 @@ header h1 {
     border: none;
     font-size: 20px;
     cursor: pointer;
-    color: #333;
+    color: var(--accent-color);
     transition: color 0.3s ease;
 }
 
+.wishlist-btn:hover,
 .active-wishlist-btn .active-heart {
-    color: var(--accent-color)!important;
-}
-
-.wishlist-btn:hover {
     color: var(--accent-color);
 }
 
 .detail-price {
-    font-size: 22px;
+    font-size: 15px;
     font-weight: 700;
-    color: #000;
-    margin-bottom: 30px;
+    color: var(--accent-color);
+    margin-bottom: 16px;
 }
 
-/* Bagian Deskripsi Teks */
 .detail-description {
-    color: #666;
-    line-height: 1.8;
-    font-size: 14px;
-    margin-bottom: 35px;
-    border-bottom: 1px solid #f2f2f2;
+    color: var(--text-secondary-color);
+    line-height: 1.6;
+    font-size: 12px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--line);
     padding-bottom: 30px;
 }
 
-/* Bagian Pilihan Ukuran */
+.model-info {
+    display: block;
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--text-secondary-color);
+}
+
 .size-selector .size-header {
     display: flex;
     justify-content: space-between;
@@ -619,7 +963,7 @@ header h1 {
 
 .size-header h4 {
     margin: 0;
-    font-size: 13px;
+    font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -633,20 +977,19 @@ header h1 {
 .size-options {
     display: flex;
     gap: 12px;
-    margin-bottom: 45px;
+    margin-bottom: 24px;
 }
 
 .size-options button {
     background: var(--white);
     border: 1px solid var(--line);
-    padding: 10px 22px;
+    padding: 8px 16px;
     cursor: pointer;
     font-weight: 600;
-    font-size: 13px;
+    font-size: 12px;
     transition: all 0.3s ease;
 }
 
-/* Gaya tombol ukuran saat aktif */
 .size-options button:hover,
 .size-options button.active {
     background: var(--accent-color);
@@ -654,14 +997,14 @@ header h1 {
     border-color: var(--accent-color);
 }
 
-/* BAGIAN TOMBOL ADD TO CART (UTAMA DI BAWAH) */
+/* TOMBOL ADD TO CART */
 .btn-add-to-cart {
     width: 100%;
     background: var(--text-color);
     color: var(--white);
     border: none;
-    padding: 18px;
-    font-size: 15px;
+    padding: 14px;
+    font-size: 16px;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -670,16 +1013,44 @@ header h1 {
     justify-content: center;
     align-items: center;
     gap: 12px;
+    transition: background 0.3s ease;
+}
+
+.btn-add-to-cart:hover {
+    background: var(--accent-color);
+}
+
+.cart-header-tabs button {
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
     transition: all 0.3s ease;
 }
 
-/* Efek Hover Tombol Aksi */
-.btn-add-to-cart:hover {
-    background: var(--line);
-    color: var(--white);
+/* Garis bawah penanda tab mana yang lagi aktif */
+.tab-active {
+    color: var(--text-color);
+    border-bottom: 2px solid var(--text-color) !important;
+    padding-bottom: 5px;
 }
 
-/*footer */
+.tab-inactive {
+    color: var(--text-secondary-color);
+    border-bottom: 2px solid transparent !important;
+}
+
+.tab-inactive:hover {
+    color: var(--accent-color);
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
 footer {
     background-color: var(--footer);
     padding: 50px 5% 25px;
@@ -712,15 +1083,14 @@ footer p {
     letter-spacing: 0.5px;
 }
 
-/* ==========================================================================
-   RESPONSIVE / MOBILE
-   ========================================================================== */
 
-/* Tablet (max 1024px) */
+/* ==========================================================================
+   RESPONSIVE — TABLET (max 1024px)
+   ========================================================================== */
 @media (max-width: 1024px) {
     .hero {
         height: 80vh;
-        padding: 60px 5% 0 5%;
+        padding: 60px 5% 0;
     }
 
     .hero-section h2 {
@@ -742,21 +1112,32 @@ footer p {
     }
 }
 
-/* Mobile (max 768px) */
+
+/* ==========================================================================
+   RESPONSIVE — MOBILE (max 768px)
+   ========================================================================== */
 @media (max-width: 768px) {
 
-    /* navbar */
+    /* Navbar */
     header .logo {
-        padding: 12px 4%;
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 2%;
+        text-align: center;
     }
 
-    header h1 {
+    header h2 {
         font-size: 16px;
     }
 
     .nav-links {
-        display: none;
-        /* sembunyikan nav link di mobile */
+        display: flex;
+        gap: 15px;
+    }
+
+    .nav-links a {
+        font-size: 11px;
+        letter-spacing: 1px;
     }
 
     .nav-icons {
@@ -767,110 +1148,12 @@ footer p {
         font-size: 16px;
     }
 
-    /* hero */
+    /* Hero */
     .hero {
-        height: 60vh;
-        padding: 40px 5% 0 5%;
-        justify-content: center;
-        text-align: center;
-        background-position: center top;
-    }
-
-    .hero-section {
-        max-width: 100%;
-    }
-
-    .hero-section h2 {
-        font-size: 26px;
-    }
-
-    .hero-section p {
-        font-size: 13px;
-    }
-
-    /* new arrivals */
-    .new-arrivals {
-        padding: 40px 4%;
-    }
-
-    .product-grid {
-        grid-template-columns: 1fr;
-        /* 1 kolom di mobile */
-        gap: 20px;
-    }
-
-    .product-card img {
-        height: 260px;
-    }
-
-    /* ads banner */
-    .ads-banner {
-        padding: 50px 15px;
-    }
-
-    .ads-banner h2 {
-        font-size: 22px;
-    }
-
-    /* collections */
-    .collections {
-        padding: 40px 4%;
-    }
-
-    .collection-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-        gap: 12px;
-    }
-
-    .collection-card {
-        height: 180px;
-    }
-
-    .collection-card.big-card {
-        grid-column: span 1;
-        grid-row: span 1;
-        height: 220px;
-    }
-
-    /* footer */
-    .footer-links {
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-}
-
-@media (max-width: 768px) {
-
-    /* 1. Navigasi Header Mobile */
-    header .logo {
-        flex-direction: column;
-        /* Membuat Logo, Menu, dan Ikon tersusun rapi ke bawah jika layar terlalu sempit */
-        gap: 15px;
-        padding: 15px 2%;
-        text-align: center;
-    }
-
-    .nav-links {
-        gap: 15px;
-        /* Mempersempit jarak antar menu agar muat di layar HP */
-    }
-
-    .nav-links a {
-        font-size: 11px;
-        /* Memperkecil font menu */
-        letter-spacing: 1px;
-    }
-
-    /* 2. Hero Section Mobile (Sesuai Konsep Kamu) */
-    .hero {
-        background-image: url('assets/Goth.png');
         background-size: cover;
         background-position: top center;
         height: 65vh;
-        /* Sedikit disesuaikan agar proporsional di HP */
         padding: 0 5%;
-        display: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
@@ -878,15 +1161,13 @@ footer p {
 
     .hero-section {
         max-width: 100%;
-        background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
-        /* Gradasi bayangan di bawah teks */
         width: 100%;
         padding: 30px 15px;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
     }
 
     .hero-section h2 {
         font-size: 22px;
-        /* Diperkecil dari 24px agar tidak memakan banyak baris */
         color: var(--white);
     }
 
@@ -901,10 +1182,9 @@ footer p {
         font-size: 11px;
     }
 
-    /* 3. New Arrivals Grid Mobile (Penyelamat Layout 2 Kolom) */
+    /* New Arrivals */
     .new-arrivals {
         padding: 40px 4%;
-        /* Memperkecil padding luar */
     }
 
     .new-arrivals h2 {
@@ -914,30 +1194,24 @@ footer p {
 
     .product-grid {
         grid-template-columns: repeat(2, 1fr);
-        /* Mengubah otomatis jadi 2 kolom sejajar di HP */
         gap: 15px;
-        /* Mempersempit jarak antar produk agar padat estetik */
     }
 
     .product-card {
         padding: 8px;
-        /* Memperkecil bingkai putih kartu */
     }
 
     .product-card img {
         height: 240px;
-        /* Menurunkan tinggi foto agar rasionya pas di layout 2 kolom mobile */
         margin-bottom: 10px;
     }
 
     .product-card h3 {
         font-size: 13px;
-        /* Mengecilkan teks judul baju */
     }
 
     .product-card p {
         font-size: 13px;
-        /* Mengecilkan teks harga */
         margin-bottom: 10px;
     }
 
@@ -946,35 +1220,43 @@ footer p {
         font-size: 10px;
     }
 
-    /* 4. Ads Banner Mobile */
+    /* Ads Banner */
     .ads-banner {
         padding: 60px 15px;
     }
 
     .ads-banner h2 {
         font-size: 18px;
-        /* Sesuai draf kamu, ukuran ini sudah pas di HP */
     }
 
     .ads-banner p {
         font-size: 13px;
     }
 
+    /* Collections */
+    .collections {
+        padding: 40px 4%;
+    }
+
     .collection-grid {
         grid-template-columns: 1fr;
-        /* Mengubah otomatis jadi 1 kolom sejajar di HP */
+        grid-template-rows: auto;
         gap: 15px;
     }
 
     .collection-card {
         height: 180px;
-        /* Menurunkan tinggi kartu koleksi agar proporsional di HP */
     }
 
-    /* 6. Footer Mobile */
+    .collection-card.big-card {
+        grid-column: span 1;
+        grid-row: span 1;
+        height: 220px;
+    }
+
+    /* Footer */
     .footer-links {
         flex-wrap: wrap;
-        /* Jika menu di footer terlalu panjang, otomatis melompat rapi ke baris baru */
         gap: 20px;
     }
 }
