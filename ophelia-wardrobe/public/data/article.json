@@ -1,35 +1,35 @@
 [
     {
         "id": 1,
-        "title": "The Evolution of Gothic Lolita: From Harajuku to Modern Elegance",
-        "author": "Ophelia Curator",
-        "date": "May 10, 2026",
-        "category": "Fashion History",
+        "title": "How to Style Gothic Dresses for Everyday Wear",
         "image": "assets/article1.png",
-        "readTime": "5 min read",
-        "summary": "Discover how the fusion of traditional Victorian mourning attire and Japanese subculture created one of the most iconic alternative fashion aesthetics in the world.",
-        "content": "Gothic Lolita fashion is a unique subculture that emerged from the streets of Harajuku, Tokyo, during the late 1990s. It beautifully marries the dark, melancholic aesthetics of Western Gothic subculture with the cute, doll-like silhouettes of traditional Japanese Lolita fashion. Unlike Sweet Lolita, which focuses on pastel colors and whimsical motifs, Gothic Lolita relies heavily on deep blacks, rich navy blues, and dark burgundy. Key elements include structured corsets, layered petticoats to create the signature bell-shaped skirt, and intricate lace trims. Today, the style has evolved into a global movement of self-expression, emphasizing modern elegance, high-quality tailoring, and pride in alternative identity."
+        "link": "#article1",
+        "author": "Ophelia Editorial",
+        "date": "May 10, 2026",
+        "category": "Styling",
+        "summary": "Learn how to transform dramatic gothic pieces into wearable, effortless everyday outfits without losing your dark edge.",
+        "content": "Gothic fashion is often associated with grand subcultural events, but bringing it into your daily rotation is easier than you think. Start by pairing structural corset tops with relaxed denim, or layering a sheer lace midi skirt over comfortable biker shorts. Accessories play a vital role here—swap heavy silver chokers for subtle dark pendants to strike the perfect balance between casual and mysterious."
     },
     {
         "id": 2,
-        "title": "Preserving the Dark: Essential Care Tips for Velvet and Lace",
-        "author": "Goth Care Expert",
-        "date": "April 28, 2026",
-        "category": "Maintenance Guide",
+        "title": "5 Essentials for a Dark Minimalist Wardrobe",
         "image": "assets/article2.png",
-        "readTime": "4 min read",
-        "summary": "Learn the proper techniques to clean, store, and maintain your delicate gothic pieces without damaging their intricate brocades and luxury fabrics.",
-        "content": "Alternative garments, especially Gothic and Lolita dresses, are investments that require specialized care. Luxury fabrics like heavy cotton velvet, delicate battenberg lace, and structured brocades can easily be ruined by standard washing machines. First, always check the care label, but when in doubt, hand-washing with cold water and a mild detergent is the safest route. Never wring out velvet dresses; instead, press the water out gently using a clean towel. For storage, always hang heavy gowns on padded hangers to maintain shoulder structures, and store them in breathable garment bags away from direct sunlight to prevent the rich black dye from fading into an unwanted brown tint."
+        "link": "#article2",
+        "author": "Lady Midnight",
+        "date": "May 12, 2026",
+        "category": "Wardrobe",
+        "summary": "How to build a versatile, high-quality gothic collection with just a few staple items that match everything.",
+        "content": "Building a minimalist dark wardrobe relies heavily on textures rather than quantity. Investing in a tailored black velvet blazer, a premium combat boot pair, and breathable mesh tops allows you to create over twenty unique outfit combinations. Focus on the drape of the fabric and the subtle silver hardwares to keep your minimalistic style uniquely captivating."
     },
     {
         "id": 3,
-        "title": "Demystifying Ouji Fashion: The Prince Aesthetic Explained",
-        "author": "Subculture Stylist",
-        "date": "March 15, 2026",
-        "category": "Style Guide",
+        "title": "Top 10 Must-Have Accessories for Gothic Outfits",
         "image": "assets/article3.png",
-        "readTime": "6 min read",
-        "summary": "An introductory guide to Ouji-kei, the masculine counterpart to Lolita fashion, focusing on essential silhouettes, layering, and accessories.",
-        "content": "Ouji fashion, often translated as 'Prince fashion' or called 'Kodona', is the masculine counterpart to the Lolita fashion subculture. While Lolita draws inspiration from Victorian dolls and girls' dresses, Ouji is inspired by the attire of young Victorian boys and aristocratic gentlemen. The silhouette focuses on structured upper garments, such as tailored waistcoats, vests, and double-breasted blazers, paired with distinctive lower pieces like pumpkin pants, knickerbockers, or straight-leg trousers ending at the knee. Layering is key to achieving a successful Ouji coordination (coord). Adding jabots, lace cravats, and metallic pocket chains will instantly elevate the look, making it a perfect blend of high-fashion tailoring and dark alternative edge."
+        "link": "#article3",
+        "author": "Vampira Styles",
+        "date": "May 14, 2026",
+        "category": "Accessories",
+        "summary": "From intricate silver rings to statement headwear, these are the accessories that elevate any basic black look.",
+        "content": "An outfit is never truly complete without the right accents. For the modern gothic aesthetic, layering stacked obsidian rings with heavy-duty leather belts adds instant depth to a simple black maxi dress. Don't shy away from statement headwear either; a subtle dark beret or a lace veil headband can easily tie your whole look together for a dramatic finish."
     }
 ]

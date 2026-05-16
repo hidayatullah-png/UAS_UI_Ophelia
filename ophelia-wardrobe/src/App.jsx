@@ -1,7 +1,26 @@
 import { useState } from "react";
-import { HashRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, Link, useLocation } from "react-router-dom";
 import Catalog from "./pages/Catalog";
 import ProductDetail from "./pages/ProductDetail";
+import Home from "./pages/Home";
+
+function PromoBanner({ showBanner, setShowBanner }) {
+  const location = useLocation();
+  const isShopPage = location.pathname === '/Shop';
+
+  if (!showBanner || !isShopPage) return null;
+
+  return (
+    <div className="promo-banner">
+      <p>Halloween Discount: 5% off with 2 items, 10% off with 3 or more |{" "}
+        <a href="#Halloween">VIEW OPTIONS</a>
+      </p>
+      <button className="close-banner-btn" onClick={() => setShowBanner(false)}>
+        <i className="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+  );
+}
 
 export default function App() {
   const [showBanner, setShowBanner] = useState(true);
@@ -55,22 +74,13 @@ export default function App() {
   const totalSemua = cartItems.reduce((total, item) => total + item.qty, 0) + wishlistItems.length;
   return (
     <Router>
-      {showBanner && (
-        <div className="promo-banner">
-          <p>Halloween Discount: 5% off with 2 items, 10% off with 3 or more |{" "}
-            <a href="#Halloween">VIEW OPTIONS</a>
-          </p>
-          <button className="close-banner-btn" onClick={() => setShowBanner(false)}>
-            <i className="fa-solid fa-xmark"></i>
-          </button>
-        </div>
-      )}
+      <PromoBanner showBanner={showBanner} setShowBanner={setShowBanner} />
       <header>
         <div className="logo">
           <h4>Ophelia</h4>
           <nav className="nav-links">
-            <a href="/">Home</a>
-            <Link to="/" className="active">Shop</Link>
+            <Link to="/">Home</Link>
+            <Link to="/Shop" className="active">Shop</Link>
             <a href="/#collections">Collections</a>
             <a href="/#articles">Articles</a>
           </nav>
@@ -192,8 +202,8 @@ export default function App() {
       </div>
 
       <Routes>
-        <Route path="/" element={<Catalog />} />
-        {/* 🛠️ PERBAIKAN: Melempar fungsi addToCart sebagai props ke ProductDetail */}
+        <Route path="/" element={<Home />} />
+        <Route path="/Shop" element={<Catalog addToCart={addToCart} toggleWishlist={toggleWishlist} wishlistItems={wishlistItems} />} />
         <Route path="/product/:id" element={<ProductDetail addToCart={addToCart} toggleWishlist={toggleWishlist} wishlistItems={wishlistItems} />} />
       </Routes>
     </Router>

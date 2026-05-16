@@ -62,7 +62,7 @@ export default function ProductDetail({ addToCart, toggleWishlist, wishlistItems
                         <p>
                             {product.description ||
                                 "A beautifully crafted gothic piece, tailored for those who embrace the midnight elegance. Made from premium materials with exquisite dark accents."}<br></br>
-                            <span className="model-info">Model: {product.model || "Model: Height 177 cm and size M"}</span>
+                            <span className="model-info">Model: {product.model || "Height 177 cm and size M"}</span>
                         </p>
                     </div>
                     <div className="detail-options">
