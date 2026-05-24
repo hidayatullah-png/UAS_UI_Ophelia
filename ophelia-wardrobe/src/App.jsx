@@ -3,6 +3,8 @@ import { HashRouter as Router, Routes, Route, Link, useLocation } from "react-ro
 import Catalog from "./pages/Catalog";
 import ProductDetail from "./pages/ProductDetail";
 import Home from "./pages/Home";
+import Articles from "./pages/Articles";
+import ArticleDetail from "./pages/ArticleDetail";
 
 function PromoBanner({ showBanner, setShowBanner }) {
   const location = useLocation();
@@ -82,7 +84,7 @@ export default function App() {
             <Link to="/">Home</Link>
             <Link to="/Shop" className="active">Shop</Link>
             <a href="/#collections">Collections</a>
-            <a href="/#articles">Articles</a>
+            <Link to="/Articles">Articles</Link>
           </nav>
           <div className="nav-icons">
             <button className="header-icon-btn" onClick={() => {
@@ -205,6 +207,8 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Shop" element={<Catalog addToCart={addToCart} toggleWishlist={toggleWishlist} wishlistItems={wishlistItems} />} />
         <Route path="/product/:id" element={<ProductDetail addToCart={addToCart} toggleWishlist={toggleWishlist} wishlistItems={wishlistItems} />} />
+        <Route path="/Articles" element={<Articles />} />
+        <Route path="/article/:id" element={<ArticleDetail />} />
       </Routes>
     </Router>
   );

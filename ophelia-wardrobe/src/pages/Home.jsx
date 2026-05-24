@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 export default function Home() {
     return (
         <main>
-            {/* 1. HERO SECTION */}
             <section className="hero">
                 <div className="hero-section">
                     <h1>Embrace & Explore The Elegance Of The Night</h1>
@@ -13,7 +12,6 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* 2. NEW ARRIVALS */}
             <section className="new-arrivals">
                 <h2>New Arrivals</h2>
                 <div className="product-grid">
@@ -86,7 +84,6 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* 5. LATEST ARTICLES */}
             <section className="articles" id="articles">
                 <h2>Latest Articles</h2>
                 <div className="article-grid">

@@ -1079,6 +1079,357 @@ header h4 {
 }
 
 /* ==========================================================================
+   ARTICLES
+   ========================================================================== */
+.journal {
+    background-color: var(--white);
+    width: 100%;
+}
+
+.journal-banner {
+    width: 100%;
+    height: 380px;
+    background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.25)), url('/assets/journal-hero.png') no-repeat center center;
+    background-size: cover;
+    background-color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+}
+
+.journal-hero-overlay h1 {
+    font-size: 44px;
+    letter-spacing: 8px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-family: 'Playfair Display', serif;
+    line-height: 1.2;
+    text-align: center;
+    color: var(--white);
+}
+
+.journal-hero-overlay p {
+    font-size: 15px;
+    max-width: 800px;
+    margin: 0 auto;
+    color: var(--white);
+    font-style: italic;
+    line-height: 1.6;
+}
+
+.journal-content {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+.journal-filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 15px;
+    margin-bottom: 50px;
+}
+
+.journal-left-title h3 {
+    font-size: 22px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--text-color);
+}
+
+.filter-right-views {
+    display: flex;
+    gap: 25px;
+}
+
+.view-toggle-btn {
+    background: none;
+    border: none;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--line);
+    cursor: pointer;
+    text-transform: uppercase;
+    padding: 5px 0;
+    transition: all 0.2s ease;
+}
+
+.view-toggle-btn.active-views,
+.view-toggle-btn:hover {
+    color: var(--text-color);
+    border-bottom: 2px solid var(--text-color);
+}
+
+.journal-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 55px;
+}
+
+.journal-row-card {
+    display: grid;
+    grid-template-columns: 80px 340px 1fr;
+    gap: 45px;
+    align-items: start;
+    border-bottom: 1px solid var(--white);
+    padding-bottom: 50px;
+}
+
+.journal-date-column {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.journal-month {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-secondary-color);
+    letter-spacing: 1px;
+}
+
+.journal-day {
+    font-size: 42px;
+    font-weight: 400;
+    color: var(--text-color);
+    line-height: 1.0;
+    margin-top: 4px;
+}
+
+.journal-image-column {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    overflow: hidden;
+    background-color: var(--white);
+}
+
+.journal-image-column img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.journal-row-card:hover .journal-image-column img {
+    transform: scale(1.05);
+}
+
+.journal-info-column {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.journal-category {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+}
+
+.journal-title {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 14px;
+    line-height: 1.3;
+}
+
+.journal-summary {
+    font-size: 14px;
+    color: var(--line);
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.journal-author {
+    font-size: 12px;
+    color: var(--text-secondary-color);
+    font-style: italic;
+    margin-bottom: 22px;
+}
+
+.journal-details-link {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    width: max-content;
+    padding-bottom: 3px;
+    border-bottom: 1px solid var(--text-color);
+    transition: all 0.2s ease;
+}
+
+.journal-details-link:hover {
+    color: var(--accent-colorr);
+    border-bottom: var(--text-color)
+}
+
+.journal-previous-trigger {
+    margin-top: 40px;
+    text-align: left;
+}
+
+.btn-load-previous {
+    background: none;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary-color);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: color 0.2s;
+}
+
+.btn-load-previous:hover {
+    color: var(--accent-color);
+}
+
+/* ==========================================================================
+   DEDICATED ARTICLE DETAIL PAGE STYLE
+   ========================================================================== */
+.ophelia-article-detail-page {
+    background-color: #ffffff;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.article-status-msg {
+    padding: 120px 20px;
+    text-align: center;
+    font-size: 16px;
+    color: #666;
+    font-style: italic;
+}
+
+.article-detail-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 20px 100px 20px;
+    text-align: left;
+}
+
+/* Navigasi Back */
+.back-to-journal-nav {
+    margin-bottom: 35px;
+}
+
+.back-to-journal-nav a {
+    text-decoration: none;
+    color: #3ea2c7;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.2s ease;
+}
+
+.back-to-journal-nav a:hover {
+    color: #000000;
+}
+
+/* Header Info */
+.article-detail-cat {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    display: inline-block;
+    margin-bottom: 12px;
+}
+
+.article-detail-title {
+    font-size: 38px;
+    font-weight: 400;
+    color: #111111;
+    line-height: 1.25;
+    margin-bottom: 18px;
+    font-family: 'Playfair Display', serif;
+}
+
+.article-detail-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 13px;
+    color: #888888;
+    margin-bottom: 40px;
+}
+
+.article-detail-author {
+    font-style: italic;
+    color: #444444;
+}
+
+.meta-divider {
+    color: #dddddd;
+}
+
+/* Frame Image */
+.article-detail-hero-image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background-color: #f5f5f5;
+    margin-bottom: 45px;
+}
+
+.article-detail-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Bagian Teks Bacaan */
+.article-detail-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.article-detail-summary-teaser {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #222222;
+    font-weight: 500;
+    border-left: 3px solid #000000;
+    padding-left: 24px;
+    font-style: italic;
+}
+
+.article-detail-body-text {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #444444;
+    text-align: justify;
+}
+
+/* Responsif Layar HP */
+@media (max-width: 768px) {
+    .article-detail-title {
+        font-size: 28px;
+    }
+
+    .article-detail-summary-teaser {
+        font-size: 16px;
+        padding-left: 15px;
+    }
+}
+
+/* ==========================================================================
    FOOTER
    ========================================================================== */
 footer {
