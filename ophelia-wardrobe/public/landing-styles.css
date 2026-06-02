@@ -176,6 +176,167 @@ header h4 {
     box-shadow: 0 6px 12px rgba(73, 2, 6, 0.3);
 }
 
+/* ==========================================================================
+   CUSTOMER SIGN-IN PAGE STYLING
+   ========================================================================== */
+.customer-login-page {
+    background-color: #ffffff;
+    width: 100%;
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    box-sizing: border-box;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 440px;
+    text-align: center;
+}
+
+.login-header-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    color: #111111;
+    margin: 0 0 10px 0;
+    font-weight: 400;
+}
+
+.login-header-text p {
+    font-size: 14px;
+    color: #777777;
+    line-height: 1.5;
+    margin: 0 0 35px 0;
+}
+
+/* Form Card Area */
+.login-form-card {
+    border: 1px solid #e5e5e5;
+    padding: 40px 35px;
+    background-color: #ffffff;
+    text-align: left;
+}
+
+.customer-form-element {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.input-field-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field-group label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #333333;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+}
+
+.input-field-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    box-sizing: border-box;
+    font-size: 14px;
+    background-color: #ffffff;
+    transition: border-color 0.2s;
+}
+
+.input-field-group input:focus {
+    outline: none;
+    border-color: #3ea2c7;
+}
+
+.forgot-pwd-link-zone {
+    text-align: right;
+    margin-top: 6px;
+}
+
+.forgot-pwd-link-zone a {
+    font-size: 12px;
+    color: #777777;
+    text-decoration: none;
+}
+
+.forgot-pwd-link-zone a:hover {
+    color: #3ea2c7;
+    text-decoration: underline;
+}
+
+/* Tombol Submit */
+.btn-customer-signin {
+    width: 100%;
+    padding: 14px;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-customer-signin:hover {
+    background-color: #3ea2c7;
+}
+
+/* Status Alert */
+.alert-msg {
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.alert-msg.error-style {
+    background-color: rgba(229, 62, 62, 0.08);
+    color: #e53e3e;
+}
+
+.alert-msg.success-style {
+    background-color: rgba(62, 162, 199, 0.08);
+    color: #3ea2c7;
+}
+
+/* Footer Link Redirect */
+.register-redirect-footer {
+    text-align: center;
+    margin-top: 25px;
+    border-top: 1px solid #eeeeee;
+    padding-top: 20px;
+    font-size: 14px;
+    color: #555555;
+}
+
+.register-redirect-footer a,
+.admin-gateway-link-zone a {
+    color: #3ea2c7;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-redirect-footer a:hover,
+.admin-gateway-link-zone a:hover {
+    text-decoration: underline;
+}
+
+.admin-gateway-link-zone {
+    margin-top: 30px;
+    font-size: 13px;
+    color: #888888;
+}
 
 /* ==========================================================================
    NEW ARRIVALS
@@ -1417,6 +1578,236 @@ header h4 {
     text-align: justify;
 }
 
+/* ==========================================================================
+   DEDICATED CHECKOUT PAGE STYLING
+   ========================================================================== */
+.checkout-page-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 20px 100px 20px;
+    text-align: left;
+}
+
+.checkout-main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    color: #111;
+}
+
+.checkout-grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 50px;
+}
+
+.checkout-grid-layout.empty-layout {
+    grid-template-columns: 1fr;
+}
+
+/* Kolom Form */
+.checkout-shipping-form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.checkout-shipping-form h3,
+.checkout-summary-sidebar h3 {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #111;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 12px;
+    margin-bottom: 6px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #555;
+    letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    box-sizing: border-box;
+    font-size: 14px;
+    background-color: #ffffff;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #3ea2c7;
+}
+
+.form-row-twin {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.btn-submit-order {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: background-color 0.2s;
+}
+
+.btn-submit-order:hover {
+    background-color: #3ea2c7;
+}
+
+/* Sidebar Summary Belanja */
+.checkout-summary-sidebar {
+    border: 1px solid #e5e5e5;
+    padding: 25px;
+    background-color: #fbfbfb;
+    height: fit-content;
+}
+
+.checkout-summary-sidebar h3 {
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+}
+
+.checkout-summary-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-height: 320px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding-right: 5px;
+}
+
+.checkout-summary-item-row {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.checkout-summary-item-row img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    background-color: #eaeaea;
+}
+
+.summary-item-info {
+    flex: 1;
+}
+
+.summary-item-info h4 {
+    margin: 0 0 4px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #222;
+}
+
+.summary-item-info p {
+    margin: 0;
+    font-size: 12px;
+    color: #777;
+}
+
+.summary-item-subtotal {
+    font-size: 14px;
+    color: #111;
+}
+
+.checkout-total-bill-row {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #e5e5e5;
+    padding-top: 18px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #000;
+}
+
+/* Tampilan Sukses Order */
+.checkout-success-wrapper {
+    padding: 100px 20px;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.success-icon {
+    font-size: 60px;
+    color: #3ea2c7;
+    margin-bottom: 20px;
+}
+
+.checkout-success-wrapper h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #111;
+}
+
+.checkout-success-wrapper p {
+    color: #666;
+    margin-bottom: 35px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.btn-success-back {
+    display: inline-block;
+    padding: 13px 28px;
+    background-color: #000000;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: background-color 0.2s;
+}
+
+.btn-success-back:hover {
+    background-color: #3ea2c7;
+}
+
+/* Responsif HP */
+@media (max-width: 768px) {
+    .checkout-grid-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .form-row-twin {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+}
+
 /* Responsif Layar HP */
 @media (max-width: 768px) {
     .article-detail-title {
@@ -1426,6 +1817,580 @@ header h4 {
     .article-detail-summary-teaser {
         font-size: 16px;
         padding-left: 15px;
+    }
+}
+
+/* ==========================================================================
+   DEDICATED CHECKOUT PAGE STYLING
+   ========================================================================== */
+.checkout-page-wrapper {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px 20px 100px 20px;
+    text-align: left;
+}
+
+.checkout-main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+    color: #111;
+}
+
+.checkout-grid-layout {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 50px;
+}
+
+.checkout-grid-layout.empty-layout {
+    grid-template-columns: 1fr;
+}
+
+/* Kolom Form */
+.checkout-shipping-form {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+}
+
+.checkout-shipping-form h3,
+.checkout-summary-sidebar h3 {
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #111;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 12px;
+    margin-bottom: 6px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #555;
+    letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cccccc;
+    box-sizing: border-box;
+    font-size: 14px;
+    background-color: #ffffff;
+    transition: border-color 0.2s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #3ea2c7;
+}
+
+.form-row-twin {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.btn-submit-order {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #000000;
+    color: #ffffff;
+    border: none;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    letter-spacing: 1px;
+    transition: background-color 0.2s;
+}
+
+.btn-submit-order:hover {
+    background-color: #3ea2c7;
+}
+
+/* Sidebar Summary Belanja */
+.checkout-summary-sidebar {
+    border: 1px solid #e5e5e5;
+    padding: 25px;
+    background-color: #fbfbfb;
+    height: fit-content;
+}
+
+.checkout-summary-sidebar h3 {
+    border-bottom: 1px solid #e5e5e5;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+}
+
+.checkout-summary-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    max-height: 320px;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    padding-right: 5px;
+}
+
+.checkout-summary-item-row {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.checkout-summary-item-row img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    background-color: #eaeaea;
+}
+
+.summary-item-info {
+    flex: 1;
+}
+
+.summary-item-info h4 {
+    margin: 0 0 4px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #222;
+}
+
+.summary-item-info p {
+    margin: 0;
+    font-size: 12px;
+    color: #777;
+}
+
+.summary-item-subtotal {
+    font-size: 14px;
+    color: #111;
+}
+
+.checkout-total-bill-row {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid #e5e5e5;
+    padding-top: 18px;
+    font-weight: 700;
+    font-size: 16px;
+    color: #000;
+}
+
+/* Tampilan Sukses Order */
+.checkout-success-wrapper {
+    padding: 100px 20px;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.success-icon {
+    font-size: 60px;
+    color: #3ea2c7;
+    margin-bottom: 20px;
+}
+
+.checkout-success-wrapper h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #111;
+}
+
+.checkout-success-wrapper p {
+    color: #666;
+    margin-bottom: 35px;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.btn-success-back {
+    display: inline-block;
+    padding: 13px 28px;
+    background-color: #000000;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: background-color 0.2s;
+}
+
+.btn-success-back:hover {
+    background-color: #3ea2c7;
+}
+
+/* Responsif HP */
+@media (max-width: 768px) {
+    .checkout-grid-layout {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .form-row-twin {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+}
+
+/* ==========================================================================
+   FIXED ADMIN LOGIN GATEWAY (Ophelia Terminal)
+   ========================================================================== */
+.admin-login-page-wrapper {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #0f1115; /* Latar belakang gelap khas Ophelia */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+}
+
+.admin-login-card {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 400px;
+    padding: 40px 35px;
+    border-radius: 8px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.login-card-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-gate-icon {
+    font-size: 48px;
+    color: #3ea2c7; /* Warna biru admin pilihanmu */
+    margin-bottom: 15px;
+    display: block;
+}
+
+.login-card-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    margin: 0 0 10px 0;
+    color: #111111;
+    font-weight: 700;
+}
+
+.login-card-header p {
+    margin: 0;
+    font-size: 13px;
+    color: #666666;
+    line-height: 1.5;
+}
+
+/* Form Kontrol */
+.admin-login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.admin-login-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.admin-login-form label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #222222;
+    letter-spacing: 0.5px;
+}
+
+.admin-login-form input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+    background-color: #f9f9f9;
+    transition: all 0.2s ease;
+}
+
+.admin-login-form input:focus {
+    outline: none;
+    border-color: #3ea2c7;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(62, 162, 199, 0.15);
+}
+
+.login-error-alert {
+    background-color: #fff5f5;
+    color: #e53e3e;
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-left: 4px solid #e53e3e;
+}
+
+.btn-admin-login {
+    background-color: #111111;
+    color: #ffffff;
+    border: none;
+    padding: 14px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 4px;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    transition: all 0.2s ease;
+}
+
+.btn-admin-login:hover {
+    background-color: #3ea2c7;
+}
+
+.login-card-footer {
+    text-align: center;
+    margin-top: 35px;
+    border-top: 1px solid #eeeeee;
+    padding-top: 15px;
+}
+
+.login-card-footer p {
+    margin: 0;
+    font-size: 11px;
+    color: #999999;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* ==========================================================================
+   ADVANCED ADMIN MANAGEMENT SYSTEM CSS (Blue & Yellow Theme)
+   ========================================================================== */
+.admin-layout-wrapper {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    min-height: 100vh;
+    background-color: #f4f6f9;
+}
+
+/* Navigasi Bilah Samping (Sidebar) */
+.admin-sidebar {
+    background-color: #1a202c;
+    color: #ffffff;
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border-right: 1px solid #2d3748;
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #2d3748;
+}
+
+.text-blue {
+    color: #3ea2c7 !important;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.menu-item {
+    background: none;
+    border: none;
+    color: #a0aec0;
+    padding: 12px 16px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: all 0.2s ease;
+    width: 100%;
+}
+
+.menu-item i {
+    width: 20px;
+    font-size: 16px;
+}
+
+.menu-item:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+}
+
+.menu-item.active {
+    background-color: #3ea2c7;
+    color: #ffffff;
+}
+
+/* Area Konten */
+.admin-main-content {
+    padding: 40px 30px 80px 30px;
+    overflow-y: auto;
+}
+
+.section-table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #f4f6f9;
+    padding-bottom: 12px;
+}
+
+.section-table-header h2 {
+    border: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Tombol Aksi Administratif */
+.btn-admin-add {
+    background-color: #3ea2c7;
+    color: #fff;
+    border: none;
+    padding: 10px 18px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-admin-add:hover {
+    background-color: #1a202c;
+}
+
+.btn-action-edit,
+.btn-action-delete {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 6px 10px;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.btn-action-edit {
+    color: #3ea2c7;
+}
+
+.btn-action-edit:hover {
+    background-color: rgba(62, 162, 199, 0.1);
+}
+
+.btn-action-delete {
+    color: #e53e3e;
+    margin-left: 5px;
+}
+
+.btn-action-delete:hover {
+    background-color: rgba(229, 62, 62, 0.1);
+}
+
+/* Penanda Tambahan */
+.stock-indicator {
+    background-color: rgba(255, 221, 87, 0.2);
+    color: #b79500;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.role-badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.role-gold {
+    background-color: #ffdd57;
+    color: #000;
+}
+
+.role-gray {
+    background-color: #edf2f7;
+    color: #4a5568;
+}
+
+/* Animasi Perpindahan Menu Efek Fade */
+.tab-content-fade {
+    animation: fadeInAdmin 0.3s ease-in-out;
+}
+
+@keyframes fadeInAdmin {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Monitor Lebar Kecil */
+@media (max-width: 992px) {
+    .admin-layout-wrapper {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-sidebar {
+        border-right: none;
+        border-bottom: 1px solid #2d3748;
     }
 }
 
