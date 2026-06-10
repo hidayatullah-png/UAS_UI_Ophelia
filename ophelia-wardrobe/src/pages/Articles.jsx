@@ -56,7 +56,7 @@ export default function Articles() {
                                     <img src={article.image} alt={article.title} />
                                 </div>
                                 <div className="journal-info-column">
-                                    <span className="journal-category" style={{ color: "#2C0001" }}>{article.category}</span>
+                                    <span className="journal-category" style={{ color: "var(--accent-color)" }}>{article.category}</span>
                                     <h4 className="journal-title">{article.title}</h4>
                                     <p className="journal-summary">{article.summary}</p>
                                     <p className="journal-author">Written by {article.author}</p>

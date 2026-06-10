@@ -29,16 +29,14 @@ export default function ArticleDetail() {
         <article className="ophelia-article-detail-page">
             <div className="article-detail-container">
 
-                {/* Tombol Back Minimalis */}
                 <div className="back-to-journal-nav">
                     <Link to="/articles">
                         <i className="fa-solid fa-arrow-left-long"></i> Back to Journal
                     </Link>
                 </div>
 
-                {/* Header Artikel: Kategori, Judul, Author */}
-                <header className="article-detail-header">
-                    <span className="article-detail-cat" style={{ color: "#3ea2c7" }}>
+                <div className="article-detail-header">
+                    <span className="article-detail-cat" style={{ color: "var(--accent-color)" }}>
                         {article.category}
                     </span>
                     <h1 className="article-detail-title">{article.title}</h1>
@@ -47,21 +45,16 @@ export default function ArticleDetail() {
                         <span className="meta-divider">•</span>
                         <span className="article-detail-date">{article.date}</span>
                     </div>
-                </header>
+                </div>
 
-                {/* Main Banner Gambar */}
                 <div className="article-detail-hero-image">
                     <img src={article.image} alt={article.title} />
                 </div>
 
-                {/* Konten Artikel */}
                 <div className="article-detail-content-wrapper">
-                    {/* Teaser/Summary dengan Border Hitam Tegas di Kiri */}
                     <p className="article-detail-summary-teaser">
                         {article.summary}
                     </p>
-
-                    {/* Cerita Panjang Utama */}
                     <div className="article-detail-body-text">
                         <p>{article.content}</p>
                     </div>

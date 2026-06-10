@@ -1,7 +1,18 @@
+import { useRef } from "react";
 import { Link } from "react-router-dom";
-//import Articles from "../components/Articles";
 
 export default function Home() {
+    const scrollContainerRef = useRef(null);
+    const handleScroll = (direction) => {
+        if (scrollContainerRef.current) {
+            const scrollAmount = 340;
+            scrollContainerRef.current.scrollBy({
+                left: direction === "left" ? -scrollAmount : scrollAmount,
+                behavior: "smooth",
+            });
+        }
+    };
+
     return (
         <main>
             <section className="hero">
@@ -13,7 +24,10 @@ export default function Home() {
             </section>
 
             <section className="new-arrivals">
-                <h2>New Arrivals</h2>
+                <div className="new-arrivals-header">
+                    <h2>New Arrivals</h2>
+                    <Link to="/Shop" className="btn-see-all">See All</Link>
+                </div>
                 <div className="product-grid">
                     <div className="product-card">
                         <img src="assets/dress1.png" alt="Gothic Dress 1" />
@@ -54,7 +68,10 @@ export default function Home() {
             </section>
 
             <section className="collections" id="collections">
-                <h2>Featured Collections</h2>
+                <div className="collections-header">
+                    <h2>Featured Collections</h2>
+                    <Link to="/Shop" className="btn-see-all">See All</Link>
+                </div>
                 <div className="collection-grid">
                     <div className="collection-card big-card">
                         <img src="assets/collection1.png" alt="Collection 1" />
@@ -73,48 +90,78 @@ export default function Home() {
                     </div>
                     <div className="collection-card">
                         <img src="assets/collection4.png" alt="Collection 4" />
-                        <h3>Seasonal Collection</h3>
+                        <h3>Shoes Collection</h3>
                         <a href="#collection4" className="btn-view">Explore Collection</a>
                     </div>
                     <div className="collection-card">
                         <img src="assets/collection5.png" alt="Collection 5" />
-                        <h3>Custom Design Collection</h3>
+                        <h3>Corset Collection</h3>
                         <a href="#collection5" className="btn-view">Explore Collection</a>
                     </div>
                 </div>
             </section>
+            <section className="about-us" id="about">
+                <div className="about-image">
+                    <img src="assets/About.png" alt="Ophelia Wardrobe" />
+                </div>
+                <div className="about-content">
+                    <span className="about-eyebrow">Our Story</span>
+                    <h2>About Ophelia</h2>
+                    <p>At Ophelia, we celebrate the beauty of gothic and lolita fashion. Our mission is to provide a curated selection of high-quality clothing and accessories that allow individuals to express their unique style and embrace the elegance of the night.</p>
+                    <p>Whether you're a seasoned gothic enthusiast or new to the scene, Ophelia Wardrobe is here to inspire and empower you on your fashion journey.</p>
+                    <a href="#contact" className="btn-cta">Contact Us</a>
+                </div>
+            </section>
 
             <section className="articles" id="articles">
-                <h2>Latest Articles</h2>
-                <div className="article-grid">
+                <div className="articles-header">
+                    <h2>Latest Articles</h2>
+                    <div className="article-nav-arrows">
+                        <button className="arrow-btn" onClick={() => handleScroll("left")}>
+                            <i className="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <button className="arrow-btn" onClick={() => handleScroll("right")}>
+                            <i className="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+                <div className="article-grid" ref={scrollContainerRef}>
                     <div className="article-card">
                         <img src="assets/article1.png" alt="Article 1" />
                         <h4>How to Style Gothic Dresses for Everyday Wear</h4>
-                        <a href="#article1" className="btn-read">Read More</a>
+                        <Link to="/article/1" className="btn-read">Read More</Link>
                     </div>
                     <div className="article-card">
                         <img src="assets/article2.png" alt="Article 2" />
                         <h4>5 Essentials for a Dark Minimalist Wardrobe</h4>
-                        <a href="#article2" className="btn-read">Read More</a>
+                        <Link to="/article/2" className="btn-read">Read More</Link>
                     </div>
                     <div className="article-card">
                         <img src="assets/article3.png" alt="Article 3" />
                         <h4>Top 10 Must-Have Accessories for Gothic Outfits</h4>
-                        <a href="#article3" className="btn-read">Read More</a>
+                        <Link to="/article/3" className="btn-read">Read More</Link>
+                    </div>
+                    <div className="article-card">
+                        <img src="assets/article4.png" alt="Article 4" />
+                        <h4>Checkmate painting an 1831 artwork by German artist Moritz Retzsch</h4>
+                        <Link to="/article/4" className="btn-read">Read More</Link>
+                    </div>
+                    <div className="article-card">
+                        <img src="assets/article5.png" alt="Article 5" />
+                        <h4>Gothic Beauty: Makeup and Hair Tips to Complete Your Look</h4>
+                        <Link to="/article/5" className="btn-read">Read More</Link>
                     </div>
                 </div>
             </section>
             <footer>
-                <footer>
-                    <div className="footer-links">
-                        <Link to="/">Home</Link>
-                        <Link to="/Shop">Shop</Link>
-                        <a href="#collections">Collections</a>
-                        <Link to="/articles">Articles</Link>
-                        <a href="#contact">Contact Us</a>
-                    </div>
-                    <p>&copy; 2023 Ophelia Wardrobe. All rights reserved.</p>
-                </footer>
+                <div className="footer-links">
+                    <Link to="/">Home</Link>
+                    <Link to="/Shop">Shop</Link>
+                    <a href="#collections">Collections</a>
+                    <Link to="/articles">Articles</Link>
+                    <a href="#contact">Contact Us</a>
+                </div>
+                <p>&copy; 2023 Ophelia Wardrobe. All rights reserved.</p>
             </footer>
         </main>
     );

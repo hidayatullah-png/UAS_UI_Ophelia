@@ -5,7 +5,7 @@
         "image": "assets/article1.png",
         "link": "#article1",
         "author": "Ophelia Editorial",
-        "date": "May 10, 2026",
+        "date": "June 10, 2026",
         "category": "Styling",
         "summary": "Learn how to transform dramatic gothic pieces into wearable, effortless everyday outfits without losing your dark edge.",
         "content": "Gothic fashion is often associated with grand subcultural events, but bringing it into your daily rotation is easier than you think. Start by pairing structural corset tops with relaxed denim, or layering a sheer lace midi skirt over comfortable biker shorts. Accessories play a vital role here—swap heavy silver chokers for subtle dark pendants to strike the perfect balance between casual and mysterious."
@@ -31,5 +31,27 @@
         "category": "Accessories",
         "summary": "From intricate silver rings to statement headwear, these are the accessories that elevate any basic black look.",
         "content": "An outfit is never truly complete without the right accents. For the modern gothic aesthetic, layering stacked obsidian rings with heavy-duty leather belts adds instant depth to a simple black maxi dress. Don't shy away from statement headwear either; a subtle dark beret or a lace veil headband can easily tie your whole look together for a dramatic finish."
+    },
+    {
+        "id": 4,
+        "title": "Checkmate painting an 1831 artwork by German artist Moritz Retzsch",
+        "image": "assets/article4.png",
+        "link": "#article4",
+        "author": "Ophelia Editorial",
+        "date": "May 14, 2025",
+        "category": "Art & Culture",
+        "summary": "it depicts a young man playing chess against the Devil, with the man's soul at stake, while a guardian angel looks on. The man appears on the verge of defeat, leading to its popular nickname (The Devil's Checkmate)",
+        "content": "The painting is a powerful representation of the struggle between good and evil, and the consequences of making deals with the devil. Over the years, this dramatic visual has frequently been used in sermons and motivational teachings as a metaphor to remind people that in times of despair or when life seems hopeless, there is always \"one more move\" remaining."
+    },
+    {
+        "id": 5,
+        "title": "Gothic Beauty: Makeup and Hair Tips to Complete Your Look",
+        "image": "assets/article5.png",
+        "link": "#article5",
+        "author": "Vampira Styles",
+        "date": "October 31, 2025",
+        "category": "Styling",
+        "summary": "Dystopian Dreams The Art of Gothic Makeup and Hair: From pale complexions to bold, dark lips, discover how to master the gothic beauty aesthetic with our expert tips and product recommendations.",
+        "content": "\"Don't be afraid to play with dark lip colors,\" says Laney. While black is the most iconic color, the perfect gothic aesthetic can also be achieved using other deep colors, such as; Deep Burgundy, Midnight Plum and Dried Blood Red. Laney's Pro-Tip: Line the center of your lips with a bit of metallic eyeshadow or dark lip gloss for dramatic volume."
     }
 ]

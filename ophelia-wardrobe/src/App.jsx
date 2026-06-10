@@ -6,8 +6,10 @@ import Home from "./pages/Home";
 import Articles from "./pages/Articles";
 import ArticleDetail from "./pages/ArticleDetail";
 import Checkout from "./pages/Checkout";
-import Login from "./pages/Login";
+import Profile from "./pages/Profile";
 import AdminDashboard from "./pages/AdminDashboard";
+import Register from "./pages/Register";
+import ForgotPassword from "./pages/ForgotPassword";
 
 // Komponen PromoBanner
 function PromoBanner({ showBanner, setShowBanner }) {
@@ -28,7 +30,6 @@ function PromoBanner({ showBanner, setShowBanner }) {
   );
 }
 
-// 🛠️ TAMBAHAN: Kita buat komponen pembungkus konten utama agar useLocation terbaca di dalam konteks <Router>
 function AppContent({
   showBanner, setShowBanner, isCartOpen, setIsCartOpen, activeTab, setActiveTab,
   wishlistItems, setWishlistItems, cartItems, setCartItems, transactionHistory, setTransactionHistory,
@@ -36,7 +37,6 @@ function AppContent({
   totalItemsCount, totalHarga, totalSemua
 }) {
 
-  // 🛠️ PERBAIKAN: useLocation dipanggil di sini (Aman karena sudah berada di dalam <Router>)
   const location = useLocation();
   const isAdminPage = location.pathname.toLowerCase() === '/admin';
 
@@ -44,7 +44,6 @@ function AppContent({
     <>
       <PromoBanner showBanner={showBanner} setShowBanner={setShowBanner} />
 
-      {/* Hanya tampilkan header JIKA BUKAN halaman admin */}
       {!isAdminPage && (
         <header>
           <div className="logo">
@@ -67,13 +66,14 @@ function AppContent({
                 <i className="fas fa-shopping-cart"></i>
                 {totalSemua > 0 && <span className="cart-badge">{totalSemua}</span>}
               </button>
-              <Link to="/login"><i className="fas fa-user"></i></Link>
+              <Link to="/profile" className="header-icon-btn">
+                <i className="fas fa-user"></i>
+              </Link>
             </div>
           </div>
         </header>
       )}
 
-      {/* Sembunyikan juga drawer keranjang belanja dari halaman admin agar tidak tumpang tindih */}
       {!isAdminPage && (
         <div className={`cart-drawer-overlay ${isCartOpen ? "open" : ""}`} onClick={() => setIsCartOpen(false)}>
           <div className="cart-drawer" onClick={(e) => e.stopPropagation()}>
@@ -198,7 +198,9 @@ function AppContent({
 
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
+        <Route path="/profile" element={<Profile transactionHistory={transactionHistory} />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/Shop" element={<Catalog addToCart={addToCart} toggleWishlist={toggleWishlist} wishlistItems={wishlistItems} />} />
         <Route path="/product/:id" element={<ProductDetail addToCart={addToCart} toggleWishlist={toggleWishlist} wishlistItems={wishlistItems} />} />
         <Route path="/Articles" element={<Articles />} />
@@ -233,7 +235,58 @@ export default function App() {
 
   const [transactionHistory, setTransactionHistory] = useState(() => {
     const savedHistory = localStorage.getItem("ophelia_history");
-    return savedHistory ? JSON.parse(savedHistory) : [];
+    if (savedHistory) {
+      return JSON.parse(savedHistory);
+    } else {
+      const dummyData = [
+        {
+          orderId: "OPH-884921",
+          date: "May 15, 2026",
+          customerName: "Hidayatullah Sukma Dewi",
+          address: "Jl. Airlangga No. 4-6, Gubeng, Kota Surabaya, Jawa Timur",
+          paymentMethod: "BANK TRANSFER",
+          items: [
+            {
+              id: 1,
+              name: "Midnight Elegance Dress",
+              price: 249.99,
+              image: "assets/dress1.png",
+              size: "M",
+              qty: 1
+            },
+            {
+              id: 3,
+              name: "Modern Ouji-Style Suit",
+              price: 159.00,
+              image: "assets/dress3.png",
+              size: "L",
+              qty: 1
+            }
+          ],
+          totalBill: 408.99
+        },
+        {
+          orderId: "OPH-204115",
+          date: "April 28, 2026",
+          customerName: "Hidayatullah Sukma Dewi",
+          address: "Jl. Airlangga No. 4-6, Gubeng, Kota Surabaya, Jawa Timur",
+          paymentMethod: "COD",
+          items: [
+            {
+              id: 2,
+              name: "Gothic Victorian Gown",
+              price: 199.00,
+              image: "assets/dress2.png",
+              size: "S",
+              qty: 2
+            }
+          ],
+          totalBill: 398.00
+        }
+      ];
+      localStorage.setItem("ophelia_history", JSON.stringify(dummyData));
+      return dummyData;
+    }
   });
 
   useEffect(() => {
@@ -283,12 +336,26 @@ export default function App() {
   return (
     <Router>
       <AppContent
-        showBanner={showBanner} setShowBanner={setShowBanner} isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen}
-        activeTab={activeTab} setActiveTab={setActiveTab} wishlistItems={wishlistItems} setWishlistItems={setWishlistItems}
-        cartItems={cartItems} setCartItems={setCartItems} transactionHistory={transactionHistory} setTransactionHistory={setTransactionHistory}
-        selectedWishlistSizes={selectedWishlistSizes} setSelectedWishlistSizes={setSelectedWishlistSizes}
-        addToCart={addToCart} removeFromCart={removeFromCart} toggleWishlist={toggleWishlist}
-        totalItemsCount={totalItemsCount} totalHarga={totalHarga} totalSemua={totalSemua}
+        showBanner={showBanner}
+        setShowBanner={setShowBanner}
+        isCartOpen={isCartOpen}
+        setIsCartOpen={setIsCartOpen}
+        activeTab={activeTab}
+        setActiveTab={setActiveTab}
+        wishlistItems={wishlistItems}
+        setWishlistItems={setWishlistItems}
+        cartItems={cartItems}
+        setCartItems={setCartItems}
+        transactionHistory={transactionHistory}
+        setTransactionHistory={setTransactionHistory}
+        selectedWishlistSizes={selectedWishlistSizes}
+        setSelectedWishlistSizes={setSelectedWishlistSizes}
+        addToCart={addToCart}
+        removeFromCart={removeFromCart}
+        toggleWishlist={toggleWishlist}
+        totalItemsCount={totalItemsCount}
+        totalHarga={totalHarga}
+        totalSemua={totalSemua}
       />
     </Router>
   );

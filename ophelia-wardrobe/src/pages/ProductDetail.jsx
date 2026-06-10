@@ -32,7 +32,7 @@ export default function ProductDetail({ addToCart, toggleWishlist, wishlistItems
         return (
             <div className="error-text">
                 <h3>Product not found</h3>
-                <Link to="/" className="btn-back">Back to home</Link>
+                <Link to="/shop" className="btn-back">Back to shop</Link>
             </div>
         );
     }
@@ -45,7 +45,7 @@ export default function ProductDetail({ addToCart, toggleWishlist, wishlistItems
                     </div>
                 </div>
                 <div className="detail-info-box">
-                    <Link to="/" className="btn-back-link">
+                    <Link to="/shop" className="btn-back-link">
                         <i className="fa-solid fa-arrow-left"></i> Back to Catalog
                     </Link>
                     <div className="info-header">
