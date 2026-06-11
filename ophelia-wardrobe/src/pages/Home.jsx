@@ -153,16 +153,6 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-            <footer>
-                <div className="footer-links">
-                    <Link to="/">Home</Link>
-                    <Link to="/Shop">Shop</Link>
-                    <a href="#collections">Collections</a>
-                    <Link to="/articles">Articles</Link>
-                    <a href="#contact">Contact Us</a>
-                </div>
-                <p>&copy; 2023 Ophelia Wardrobe. All rights reserved.</p>
-            </footer>
         </main>
     );
 }

@@ -320,6 +320,7 @@ footer {
     padding: 50px 5% 25px;
     text-align: center;
     color: var(--line);
+    margin-top: auto;
 }
 
 .footer-links {
@@ -596,6 +597,94 @@ footer p {
 .collection-card .btn-view:hover,
 .collection-card .btn-view:focus {
     background: transparent;
+}
+
+.ophelia-collections-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 5% 100px 5%;
+    text-align: center;
+}
+
+.collections-main-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--text-color);
+    margin-bottom: 30px;
+}
+
+/* Wadah tumpukan banner vertikal */
+.collections-banner-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+
+/* Kartu Poster */
+.collection-banner-card {
+    width: 100%;
+    max-width: 1055px;
+    height: 500px;
+    background-color: #f1f1f1;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--line);
+}
+
+/* Gambar Poster Full */
+.collection-banner-card .banner-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.6s ease;
+}
+
+.collection-banner-card:hover .banner-overlay-content {
+    opacity: 1;
+}
+
+/* Opsional: Gambar sedikit zoom saat di-hover */
+.collection-banner-card:hover .banner-bg-image {
+    transform: scale(1.03);
+}
+
+/* Overlay & Posisi Tombol */
+.banner-overlay-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* Tombol Merah Elegan */
+.btn-shop-overlay {
+    padding: 12px 40px;
+    background-color: var(--accent-color);
+    color: var(--white);
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-shop-overlay:hover {
+    background-color: var(--accent-color);
+    transform: translateY(-3px);
 }
 
 /* ---- 6f. About Us ---- */

@@ -10,6 +10,7 @@ import Profile from "./pages/Profile";
 import AdminDashboard from "./pages/AdminDashboard";
 import Register from "./pages/Register";
 import ForgotPassword from "./pages/ForgotPassword";
+import Collections from "./pages/Collection";
 
 // Komponen PromoBanner
 function PromoBanner({ showBanner, setShowBanner }) {
@@ -51,7 +52,7 @@ function AppContent({
             <nav className="nav-links">
               <Link to="/">Home</Link>
               <Link to="/Shop" className="active">Shop</Link>
-              <a href="/#collections">Collections</a>
+              <Link to="/collections">Collections</Link>
               <Link to="/Articles">Articles</Link>
             </nav>
             <div className="nav-icons">
@@ -195,13 +196,13 @@ function AppContent({
           </div>
         </div>
       )}
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/profile" element={<Profile transactionHistory={transactionHistory} />} />
         <Route path="/register" element={<Register />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/Shop" element={<Catalog addToCart={addToCart} toggleWishlist={toggleWishlist} wishlistItems={wishlistItems} />} />
+        <Route path="/collections" element={<Collections />} />
         <Route path="/product/:id" element={<ProductDetail addToCart={addToCart} toggleWishlist={toggleWishlist} wishlistItems={wishlistItems} />} />
         <Route path="/Articles" element={<Articles />} />
         <Route path="/article/:id" element={<ArticleDetail />} />
@@ -217,7 +218,20 @@ function AppContent({
         } />
         <Route path="/admin" element={<AdminDashboard transactionHistory={transactionHistory} />} />
       </Routes>
+      {(!isAdminPage && (
+        <footer>
+          <div className="footer-links">
+            <Link to="/">Home</Link>
+            <Link to="/Shop">Shop</Link>
+            <a href="#collections">Collections</a>
+            <Link to="/articles">Articles</Link>
+            <a href="#contact">Contact Us</a>
+          </div>
+          <p>&copy; 2023 Ophelia Wardrobe. All rights reserved.</p>
+        </footer>
+      ))}
     </>
+
   );
 }
 
