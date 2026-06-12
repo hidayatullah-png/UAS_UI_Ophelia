@@ -24,7 +24,10 @@ export default function Articles() {
 
     return (
         <div className="journal">
-            <div className="journal-banner">
+            <div className="journal-banner" style={{
+                background: `linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.25)), url('/UAS_UI_Ophelia/assets/journal-hero.png') no-repeat center center`,
+                backgroundSize: 'cover'
+            }}>
                 <div className="journal-hero-overlay">
                     <h1>ARTICLES</h1>
                     <p>.✦ ݁˖ Explore the latest insights, styling guides, and subcultural updates from Ophelia .✦ ݁˖</p>
