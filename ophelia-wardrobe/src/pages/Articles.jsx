@@ -15,9 +15,9 @@ export default function Articles() {
     const formatBadgeDate = (dateStr) => {
         if (!dateStr) return { month: "MAY", day: "10" };
         const parts = dateStr.split(" ");
-        // parts = "May", parts = "10,"  parts = "2025"
-        const month = parts ? parts.substring(0, 3).toUpperCase() : "MAY";
-        const day = parts ? parts.replace(",", "") : "10";
+
+        const month = parts[0] ? parts[0].substring(0, 3).toUpperCase() : "MAY";
+        const day = parts[1] ? parts[1].replace(",", "") : "10";
 
         return { month, day };
     };
