@@ -5,7 +5,7 @@ export default function Collections() {
     const [collections, setCollections] = useState([]);
 
     useEffect(() => {
-        fetch("/data/collection.json")
+        fetch(import.meta.env.BASE_URL + "data/collection.json")
             .then((res) => res.json())
             .then((data) => {
                 const collectionsArray = Object.keys(data).map(key => ({

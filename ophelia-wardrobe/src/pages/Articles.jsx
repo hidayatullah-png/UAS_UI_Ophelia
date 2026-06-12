@@ -5,7 +5,7 @@ export default function Articles() {
     const [articles, setArticles] = useState([]);
 
     useEffect(() => {
-        fetch("/data/article.json")
+        fetch(import.meta.env.BASE_URL + "data/article.json")
             .then((res) => res.json())
             .then((data) => setArticles(data))
             .catch((err) => console.error("Gagal memuat artikel:", err));

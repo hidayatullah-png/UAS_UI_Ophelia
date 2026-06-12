@@ -19,7 +19,7 @@ export default function Catalog() {
     const [showNewArrivalsOnly, setShowNewArrivalsOnly] = useState(false);
 
     useEffect(() => {
-        fetch("/data/product.json")
+        fetch(import.meta.env.BASE_URL + "data/product.json")
             .then((res) => res.json())
             .then((data) => setProducts(data))
             .catch((err) => console.error("Gagal memuat produk:", err));

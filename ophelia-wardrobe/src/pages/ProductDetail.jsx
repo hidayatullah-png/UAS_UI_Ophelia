@@ -12,7 +12,7 @@ export default function ProductDetail({ addToCart, toggleWishlist, wishlistItems
 
     useEffect(() => {
         setLoading(true);
-        fetch("/data/product.json")
+        fetch(import.meta.env.BASE_URL + "data/product.json")
             .then((res) => res.json())
             .then((data) => {
                 const foundProduct = data.find((p) => p.id === parseInt(id));

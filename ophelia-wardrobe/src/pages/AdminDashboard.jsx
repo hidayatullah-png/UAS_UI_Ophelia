@@ -21,20 +21,18 @@ export default function AdminDashboard({ transactionHistory }) {
     ]);
 
     useEffect(() => {
-        // Ambil data produk
-        fetch('/data/product.json')
+        fetch(import.meta.env.BASE_URL + 'data/product.json')
             .then(response => response.json())
             .then(data => setProducts(data))
             .catch(error => console.error("Gagal memuat data produk:", error));
 
-        // Ambil data artikel
-        fetch('/data/article.json')
+        //Ambil data artikel
+        fetch(import.meta.env.BASE_URL + 'data/article.json')
             .then(response => response.json())
             .then(data => setArticles(data))
             .catch(error => console.error("Gagal memuat data artikel:", error));
     }, []);
 
-    // 🛠️ PERBAIKAN: STATE POP-UP HARUS BERADA DI DALAM KOMPONEN
     // POP-UP PRODUK
     const [isProductModalOpen, setIsProductModalOpen] = useState(false);
     const [productForm, setProductForm] = useState({

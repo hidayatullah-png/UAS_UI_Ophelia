@@ -7,8 +7,7 @@ export default function ArticleDetail() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        // Mengambil data dari JSON lokal kamu
-        fetch("/data/article.json")
+        fetch(import.meta.env.BASE_URL + "data/article.json")
             .then((res) => res.json())
             .then((data) => {
                 // Cari 1 artikel yang ID-nya pas dengan ID di URL
