@@ -120,7 +120,7 @@ export default function Catalog() {
                         <div className="sidebar-section-link">
                             <h4 className="section-title-heading">Koleksi</h4>
                             <ul>
-                                <li className={selectedCollections.includes("Dress") ? "active" : ""} onClick={() => applySingleFilterLeft("Collection", "Dress")}>Gaun</li>
+                                <li className={selectedCollections.includes("Dress") ? "active" : ""} onClick={() => applySingleFilterLeft("Collection", "Dress")}>Dress</li>
                                 <li className={selectedCollections.includes("Gown") ? "active" : ""} onClick={() => applySingleFilterLeft("Collection", "Gown")}>Gown</li>
                                 <li className={selectedCollections.includes("Suit") ? "active" : ""} onClick={() => applySingleFilterLeft("Collection", "Suit")}>Suit</li>
                                 <li className={selectedCollections.includes("Waistcoat") ? "active" : ""} onClick={() => applySingleFilterLeft("Collection", "Waistcoat")}>Waistcoat</li>

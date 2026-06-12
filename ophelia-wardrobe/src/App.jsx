@@ -41,6 +41,43 @@ function AppContent({
   const location = useLocation();
   const isAdminPage = location.pathname.toLowerCase() === '/admin';
 
+  const [editingCartItem, setEditingCartItem] = useState(null);
+
+  // FUNGSI BARU: Menyimpan perubahan ukuran atau jumlah barang
+  const handleUpdateCartItem = (oldId, oldSize, newSize, newQty) => {
+    // Cegah input jumlah di bawah 1
+    if (newQty < 1) newQty = 1;
+
+    setCartItems(prevItems => {
+      const updatedItems = [...prevItems];
+      // Cari posisi barang yang sedang diedit
+      const itemIndex = updatedItems.findIndex(item => item.id === oldId && item.size === oldSize);
+
+      if (itemIndex > -1) {
+        // Perbarui ukuran dan jumlahnya
+        updatedItems[itemIndex] = {
+          ...updatedItems[itemIndex],
+          size: newSize,
+          qty: Number(newQty)
+        };
+
+        // (Mencegah ada dua baris "Midnight Dress Size M" yang terpisah)
+        const existingDuplicateIndex = updatedItems.findIndex(
+          (item, index) => index !== itemIndex && item.id === oldId && item.size === newSize
+        );
+
+        if (existingDuplicateIndex > -1) {
+          updatedItems[existingDuplicateIndex].qty += Number(newQty);
+          updatedItems.splice(itemIndex, 1); // Hapus baris yang diedit
+        }
+      }
+      return updatedItems;
+    });
+
+    // Tutup mode edit
+    setEditingCartItem(null);
+  };
+
   return (
     <>
       <PromoBanner showBanner={showBanner} setShowBanner={setShowBanner} />
@@ -103,30 +140,90 @@ function AppContent({
                     <p>Your shopping cart is empty.</p>
                   </div>
                 ) : (
-                  cartItems.map((item) => (
-                    <div className="cart-item-row" key={`${item.id}-${item.size}`}>
-                      <div className="cart-item-img">
-                        <img src={item.image} alt={item.name} />
-                      </div>
-                      <div className="cart-item-details">
-                        <h4>{item.name}</h4>
-                        <p className="item-price">${item.price.toFixed(2)}</p>
-                        <div className="item-meta">
-                          <span>{item.qty} Item</span>
-                          <span>Size: {item.size}</span>
+                  cartItems.map((item) => {
+                    const isEditing = editingCartItem === `${item.id}-${item.size}`;
+
+                    return (
+                      <div className="cart-item-row" key={`${item.id}-${item.size}`}>
+                        <div className="cart-item-img">
+                          <img src={item.image} alt={item.name} />
                         </div>
-                        <div className="cart-item-actions">
-                          <button className="item-action-btn" onClick={() => toggleWishlist(item)}>
-                            <i className={wishlistItems.find((wish) => wish.id === item.id) ? "fas fa-heart active-heart" : "far fa-heart"}></i>
-                          </button>
-                          <button className="item-action-btn"><i className="fa-solid fa-pen"></i></button>
-                          <button className="item-action-btn" onClick={() => removeFromCart(item.id, item.size)}>
-                            <i className="fa-solid fa-trash-can"></i>
-                          </button>
+                        <div className="cart-item-details">
+                          <h4>{item.name}</h4>
+                          <p className="item-price">${item.price.toFixed(2)}</p>
+
+                          {isEditing ? (
+                            <div className="edit-cart-form" style={{ display: 'flex', gap: '8px', marginBottom: '10px', }}>
+
+                              <select
+                                defaultValue={item.size}
+                                id={`edit-size-${item.id}-${item.size}`}
+                                style={{ padding: "4px", fontSize: "12px", border: "1px solid var(--line)", outline: "none", cursor: "pointer" }}
+                              >
+                                <option value="S">S</option>
+                                <option value="M">M</option>
+                                <option value="L">L</option>
+                                <option value="XL">XL</option>
+                              </select>
+
+                              {/* Dropdown Ganti Jumlah (Maksimal Sesuai Stok) */}
+                              <select
+                                defaultValue={item.qty}
+                                id={`edit-qty-${item.id}-${item.size}`}
+                                style={{ padding: "4px", fontSize: "12px", border: "1px solid var(--line)", outline: "none", cursor: "pointer", width: "50px" }}
+                              >
+                                {Array.from({ length: item.stock || 10 }, (_, i) => (
+                                  <option key={i + 1} value={i + 1}>
+                                    {i + 1}
+                                  </option>
+                                ))}
+                              </select>
+
+                              <button
+                                onClick={() => {
+                                  const newSize = document.getElementById(`edit-size-${item.id}-${item.size}`).value;
+                                  const newQty = document.getElementById(`edit-qty-${item.id}-${item.size}`).value;
+                                  handleUpdateCartItem(item.id, item.size, newSize, newQty);
+                                }}
+                                style={{ backgroundColor: "var(--accent-color)", color: "var(--white)", border: "none", padding: "0 10px", cursor: "pointer", borderRadius: "3px" }}
+                              >
+                                <i className="fa-solid fa-check"></i>
+                              </button>
+
+                            </div>
+                          ) : (
+                            <div className="item-meta">
+                              <span>{item.qty} Item</span>
+                              <span>Size: {item.size}</span>
+                            </div>
+                          )}
+
+                          <div className="cart-item-actions">
+                            <button className="item-action-btn" onClick={() => toggleWishlist(item)}>
+                              <i className={wishlistItems.find((wish) => wish.id === item.id) ? "fas fa-heart active-heart" : "far fa-heart"}></i>
+                            </button>
+
+                            <button
+                              className="item-action-btn"
+                              onClick={() => {
+                                if (isEditing) {
+                                  setEditingCartItem(null); // Batal Edit
+                                } else {
+                                  setEditingCartItem(`${item.id}-${item.size}`); // Mulai Edit
+                                }
+                              }}
+                            >
+                              <i className={isEditing ? "fa-solid fa-xmark" : "fa-solid fa-pen"}></i>
+                            </button>
+
+                            <button className="item-action-btn" onClick={() => removeFromCart(item.id, item.size)}>
+                              <i className="fa-solid fa-trash-can"></i>
+                            </button>
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  ))
+                    );
+                  })
                 )
               ) : (
                 wishlistItems.length === 0 ? (
@@ -143,14 +240,14 @@ function AppContent({
                           <p className="item-price">${item.price.toFixed(2)}</p>
 
                           <div className="wishlist-size-picker" style={{ margin: "8px 0", display: "flex", alignItems: "center", gap: "10px" }}>
-                            <label style={{ fontSize: "12px", color: "#666" }}>Size:</label>
+                            <label style={{ fontSize: "13px", color: "var(--line)" }}>Size:</label>
                             <select
                               value={currentSize}
                               onChange={(e) => setSelectedWishlistSizes({
                                 ...selectedWishlistSizes,
                                 [item.id]: e.target.value
                               })}
-                              style={{ padding: "4px 8px", backgroundColor: "#fff", border: "1px solid #ccc", fontSize: "12px", cursor: "pointer" }}
+                              style={{ padding: "4px 8px", backgroundColor: "#fff", border: "1px solid var(--line)", fontSize: "12px", cursor: "pointer" }}
                             >
                               <option value="S">S (Small)</option>
                               <option value="M">M (Medium)</option>
@@ -160,7 +257,7 @@ function AppContent({
                           </div>
 
                           <div className="cart-item-actions">
-                            <button className="item-action-btn" onClick={() => { addToCart(item, currentSize); toggleWishlist(item); }}>
+                            <button className="item-action-btn" onClick={() => { addToCart(item, currentSize); toggleWishlist(item); }} style={{ fontSize: "13px" }}>
                               Move to Cart
                             </button>
                           </div>
@@ -227,7 +324,7 @@ function AppContent({
             <Link to="/articles">Articles</Link>
             <a href="#contact">Contact Us</a>
           </div>
-          <p>&copy; 2023 Ophelia Wardrobe. All rights reserved.</p>
+          <p>&copy; 2026 Ophelia Wardrobe. All rights reserved.</p>
         </footer>
       ))}
     </>
