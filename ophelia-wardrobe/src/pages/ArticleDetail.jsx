@@ -7,7 +7,8 @@ export default function ArticleDetail() {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch(import.meta.env.BASE_URL + "data/article.json")
+        // 🛠️ PERBAIKAN 1: Path fetch di-hardcode ke repository GitHub Pages
+        fetch("/UAS_UI_Ophelia/data/article.json")
             .then((res) => res.json())
             .then((data) => {
                 // Cari 1 artikel yang ID-nya pas dengan ID di URL
@@ -47,7 +48,8 @@ export default function ArticleDetail() {
                 </div>
 
                 <div className="article-detail-hero-image">
-                    <img src={article.image} alt={article.title} />
+                    {/* 🛠️ PERBAIKAN 2: Path gambar diikat mutlak ke repository */}
+                    <img src={`/UAS_UI_Ophelia/${article.image}`} alt={article.title} />
                 </div>
 
                 <div className="article-detail-content-wrapper">

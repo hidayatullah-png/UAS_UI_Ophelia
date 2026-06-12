@@ -5,7 +5,8 @@ export default function Articles() {
     const [articles, setArticles] = useState([]);
 
     useEffect(() => {
-        fetch(import.meta.env.BASE_URL + "data/article.json")
+        // 🛠️ PERBAIKAN 1: Path fetch di-hardcode ke repository GitHub Pages
+        fetch("/UAS_UI_Ophelia/data/article.json")
             .then((res) => res.json())
             .then((data) => setArticles(data))
             .catch((err) => console.error("Gagal memuat artikel:", err));
@@ -14,9 +15,9 @@ export default function Articles() {
     const formatBadgeDate = (dateStr) => {
         if (!dateStr) return { month: "MAY", day: "10" };
         const parts = dateStr.split(" ");
-        // parts[0] = "May", parts[1] = "10,"  parts[2] = "2025"
-        const month = parts[0] ? parts[0].substring(0, 3).toUpperCase() : "MAY";
-        const day = parts[1] ? parts[1].replace(",", "") : "10";
+        // parts = "May", parts = "10,"  parts = "2025"
+        const month = parts ? parts.substring(0, 3).toUpperCase() : "MAY";
+        const day = parts ? parts.replace(",", "") : "10";
 
         return { month, day };
     };
@@ -53,7 +54,8 @@ export default function Articles() {
                                     <span className="journal-day">{day}</span>
                                 </div>
                                 <div className="journal-image-column">
-                                    <img src={article.image} alt={article.title} />
+                                    {/* 🛠️ PERBAIKAN 2: Path gambar diikat mutlak ke repository */}
+                                    <img src={`/UAS_UI_Ophelia/${article.image}`} alt={article.title} />
                                 </div>
                                 <div className="journal-info-column">
                                     <span className="journal-category" style={{ color: "var(--accent-color)" }}>{article.category}</span>

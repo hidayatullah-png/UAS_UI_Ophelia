@@ -19,7 +19,8 @@ export default function Catalog() {
     const [showNewArrivalsOnly, setShowNewArrivalsOnly] = useState(false);
 
     useEffect(() => {
-        fetch(import.meta.env.BASE_URL + "data/product.json")
+        // 🛠️ PERBAIKAN 1: Path di-hardcode langsung ke nama repository
+        fetch("/UAS_UI_Ophelia/data/product.json")
             .then((res) => res.json())
             .then((data) => setProducts(data))
             .catch((err) => console.error("Gagal memuat produk:", err));
@@ -180,7 +181,7 @@ export default function Catalog() {
                             <span>Warna</span>
                         </div>
                         <div className="pull-group-content color-swatches-container">
-                            {/* Tombol Warna (Kamu bisa sesuaikan nama warnanya dengan yang ada di JSON nanti) */}
+                            {/* Tombol Warna */}
                             <button className={`color-swatch black ${selectedColors.includes("Black") ? "active" : ""}`} onClick={() => toggleFilter(selectedColors, setSelectedColors, "Black")} title="Black"></button>
                             <button className={`color-swatch white ${selectedColors.includes("White") ? "active" : ""}`} onClick={() => toggleFilter(selectedColors, setSelectedColors, "White")} title="White"></button>
                             <button className={`color-swatch red ${selectedColors.includes("Red") ? "active" : ""}`} onClick={() => toggleFilter(selectedColors, setSelectedColors, "Red")} title="Red"></button>
@@ -244,13 +245,14 @@ export default function Catalog() {
                     currentProducts.map((product) => (
                         <div className={`product-card ${product.stock === 0 ? "out-of-stock-card" : ""}`} key={product.id}>
                             {product.stock === 0 && <span className="sold-out-badge">SOLD OUT</span>}
-                            <img src={product.image} alt={product.name} />
+                            {/* 🛠️ PERBAIKAN 2: Path gambar diikat mutlak ke repository */}
+                            <img src={`/UAS_UI_Ophelia/${product.image}`} alt={product.name} />
                             <h5 title={product.name}>
                                 {product.name.length > 30 ? product.name.substring(0, 27) + "..." : product.name}
                             </h5>
                             <p>${product.price.toFixed(2)}</p>
                             {product.stock === 0 ? (
-                                <button className="btn-view disabled-btn" disable>SOLD OUT</button>
+                                <button className="btn-view disabled-btn" disable="true">SOLD OUT</button>
                             ) : (
                                 <Link to={`/product/${product.id}`} className="btn-view">
                                     View Details

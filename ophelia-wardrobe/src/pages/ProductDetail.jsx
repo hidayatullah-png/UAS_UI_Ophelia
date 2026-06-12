@@ -12,7 +12,8 @@ export default function ProductDetail({ addToCart, toggleWishlist, wishlistItems
 
     useEffect(() => {
         setLoading(true);
-        fetch(import.meta.env.BASE_URL + "data/product.json")
+        // 🛠️ PERBAIKAN: Path fetch di-hardcode ke repository
+        fetch("/UAS_UI_Ophelia/data/product.json")
             .then((res) => res.json())
             .then((data) => {
                 const foundProduct = data.find((p) => p.id === parseInt(id));
@@ -41,7 +42,8 @@ export default function ProductDetail({ addToCart, toggleWishlist, wishlistItems
             <div className="product-detail-wrapper">
                 <div className='detail-gallery-pb'>
                     <div className="product-image">
-                        <img src={product.image} alt={product.name} />
+                        {/* 🛠️ PERBAIKAN: Path gambar diikat mutlak ke repository */}
+                        <img src={`/UAS_UI_Ophelia/${product.image}`} alt={product.name} />
                     </div>
                 </div>
                 <div className="detail-info-box">

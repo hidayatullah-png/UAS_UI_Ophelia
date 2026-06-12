@@ -21,13 +21,14 @@ export default function AdminDashboard({ transactionHistory }) {
     ]);
 
     useEffect(() => {
-        fetch(import.meta.env.BASE_URL + 'data/product.json')
+        // 🛠️ PERBAIKAN 1: Path fetch produk di-hardcode ke repository
+        fetch('/UAS_UI_Ophelia/data/product.json')
             .then(response => response.json())
             .then(data => setProducts(data))
             .catch(error => console.error("Gagal memuat data produk:", error));
 
-        //Ambil data artikel
-        fetch(import.meta.env.BASE_URL + 'data/article.json')
+        // 🛠️ PERBAIKAN 2: Path fetch artikel di-hardcode ke repository
+        fetch('/UAS_UI_Ophelia/data/article.json')
             .then(response => response.json())
             .then(data => setArticles(data))
             .catch(error => console.error("Gagal memuat data artikel:", error));
@@ -426,9 +427,9 @@ export default function AdminDashboard({ transactionHistory }) {
                                         </div>
                                         <div className="ref-form-upload">
                                             <label>Gambar Produk</label>
-                                            <input type="file" accept="image/*" onChange={(e) => setProductForm({ ...productForm, image: e.target.files[0] })} />
+                                            <input type="file" accept="image/*" onChange={(e) => setProductForm({ ...productForm, image: e.target.files })} />
                                             <label>Pdf Upload</label>
-                                            <input type="file" accept=".pdf" onChange={(e) => setProductForm({ ...productForm, pdf: e.target.files[0] })} />
+                                            <input type="file" accept=".pdf" onChange={(e) => setProductForm({ ...productForm, pdf: e.target.files })} />
                                         </div>
                                     </div>
 
@@ -475,9 +476,9 @@ export default function AdminDashboard({ transactionHistory }) {
                                         </div>
                                         <div className="ref-form-upload">
                                             <label>Gambar Artikel</label>
-                                            <input type="file" accept="image/*" onChange={(e) => setArticleForm({ ...articleForm, image: e.target.files[0] })} />
+                                            <input type="file" accept="image/*" onChange={(e) => setArticleForm({ ...articleForm, image: e.target.files })} />
                                             <label>Pdf Upload</label>
-                                            <input type="file" accept=".pdf" onChange={(e) => setArticleForm({ ...articleForm, pdf: e.target.files[0] })} />
+                                            <input type="file" accept=".pdf" onChange={(e) => setArticleForm({ ...articleForm, pdf: e.target.files })} />
                                         </div>
                                     </div>
 
