@@ -2,7 +2,7 @@
    01. CSS VARIABLES
    ============================================================ */
 :root {
-    /* MAIN Colors */
+    /* Main Colors */
     --white: #FFFFFF;
     --text-color: #100E11;
     --text-secondary-color: #706B68;
@@ -96,6 +96,17 @@ a {
     }
 }
 
+@keyframes shimmer {
+    0% {
+        background-position: -200% center;
+    }
+
+    100% {
+        background-position: 200% center;
+    }
+}
+
+/* Admin animations */
 @keyframes fadeInAdmin {
     from {
         opacity: 0;
@@ -120,17 +131,29 @@ a {
     }
 }
 
-@keyframes shimmer {
-    0% {
-        background-position: -200% center;
+@keyframes fadeInModal {
+    from {
+        opacity: 0;
     }
 
-    100% {
-        background-position: 200% center;
+    to {
+        opacity: 1;
     }
 }
 
-/* Page load animations */
+@keyframes slideUpModal {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Page load */
 .hero-section,
 .article-detail-container,
 .customer-profile-page-wrapper,
@@ -394,8 +417,8 @@ footer p {
     letter-spacing: 2px;
     border: 1px solid var(--text-color);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .btn-cta:hover {
@@ -408,34 +431,24 @@ footer p {
     animation: shimmer 1.5s linear infinite;
 }
 
-/* ---- 6b. New Arrivals ---- */
-.new-arrivals {
-    padding: 30px 5%;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.new-arrivals h2 {
-    font-size: 28px;
-    margin-bottom: 0;
-    text-transform: uppercase;
-    text-align: left;
-}
-
-.new-arrivals>p {
-    font-size: 15px;
-    color: var(--text-secondary-color);
-    margin-bottom: 15px;
-}
-
-.new-arrivals-header {
+/* Shared section header*/
+.new-arrivals-header,
+.collections-header,
+.articles-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
     margin-bottom: 25px;
     border-bottom: 1px solid var(--line);
     padding-bottom: 10px;
+}
+
+.new-arrivals-text {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    color: var(--text-secondary-color);
 }
 
 .btn-see-all {
@@ -455,6 +468,20 @@ footer p {
     color: var(--white);
     background-color: var(--accent-color);
     border-color: var(--accent-color);
+}
+
+/* ---- 6b. New Arrivals ---- */
+.new-arrivals {
+    padding: 30px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.new-arrivals h2 {
+    font-size: 28px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+    text-align: left;
 }
 
 /* ---- 6c. Ads Banner ---- */
@@ -508,16 +535,6 @@ footer p {
     margin-bottom: 0;
     text-transform: uppercase;
     text-align: left;
-}
-
-.collections-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 15px;
-    border-bottom: 1px solid var(--line);
-    padding-bottom: 10px;
-
 }
 
 .collection-grid {
@@ -580,6 +597,7 @@ footer p {
     transform: translateY(-5px);
 }
 
+/* btn-view overlay pada collection card */
 .collection-card .btn-view {
     position: absolute;
     inset: 0;
@@ -599,10 +617,11 @@ footer p {
     background: transparent;
 }
 
+/* Collections full banner page */
 .ophelia-collections-wrapper {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 60px 5% 100px 5%;
+    padding: 60px 5% 100px;
     text-align: center;
 }
 
@@ -616,7 +635,6 @@ footer p {
     margin-bottom: 30px;
 }
 
-/* Wadah tumpukan banner vertikal */
 .collections-banner-stack {
     display: flex;
     flex-direction: column;
@@ -624,7 +642,6 @@ footer p {
     align-items: center;
 }
 
-/* Kartu Poster */
 .collection-banner-card {
     width: 100%;
     max-width: 1055px;
@@ -636,7 +653,6 @@ footer p {
     border: 1px solid var(--line);
 }
 
-/* Gambar Poster Full */
 .collection-banner-card .banner-bg-image {
     width: 100%;
     height: 100%;
@@ -645,16 +661,14 @@ footer p {
     transition: transform 0.6s ease;
 }
 
-.collection-banner-card:hover .banner-overlay-content {
-    opacity: 1;
-}
-
-/* Opsional: Gambar sedikit zoom saat di-hover */
 .collection-banner-card:hover .banner-bg-image {
     transform: scale(1.03);
 }
 
-/* Overlay & Posisi Tombol */
+.collection-banner-card:hover .banner-overlay-content {
+    opacity: 1;
+}
+
 .banner-overlay-content {
     position: absolute;
     inset: 0;
@@ -667,7 +681,6 @@ footer p {
     transition: opacity 0.4s ease;
 }
 
-/* Tombol Merah Elegan */
 .btn-shop-overlay {
     padding: 12px 40px;
     background-color: var(--accent-color);
@@ -683,11 +696,10 @@ footer p {
 }
 
 .btn-shop-overlay:hover {
-    background-color: var(--accent-color);
     transform: translateY(-3px);
 }
 
-/* ---- 6f. About Us ---- */
+/* ---- 6e. About Us ---- */
 .about-us {
     max-width: 1200px;
     margin: 0 auto;
@@ -744,33 +756,7 @@ footer p {
     margin: 0;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .about-us {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .about-image {
-        aspect-ratio: 16 / 9;
-    }
-
-    .about-content h2 {
-        font-size: 24px;
-    }
-}
-
-@media (max-width: 390px) {
-    .about-content h2 {
-        font-size: 20px;
-    }
-
-    .about-content p {
-        font-size: 14px;
-    }
-}
-
-/* ---- 6d. Articles (Home Preview) ---- */
+/* ---- 6f. Articles (Home Preview / Slider) ---- */
 .articles {
     padding: 30px 5% 60px;
     max-width: 1200px;
@@ -785,33 +771,11 @@ footer p {
     text-align: left;
 }
 
-.articles-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
-    margin-bottom: 25px;
-    border-bottom: 1px solid var(--line);
-    padding-bottom: 10px;
-}
-
-.article-grid {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    scroll-snap-type: x mandatory;
-    padding-bottom: 15px;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-.article-grid::-webkit-scrollbar {
-    display: none;
-}
-
 .article-nav-arrows {
     display: flex;
     gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
 }
 
 .arrow-btn {
@@ -827,11 +791,29 @@ footer p {
     cursor: pointer;
     font-size: 12px;
     transition: all 0.2s ease;
+    flex-shrink: 0;
 }
 
 .arrow-btn:hover {
     background-color: var(--accent-color);
     color: var(--white);
+    border-color: var(--accent-color);
+}
+
+/* Article slider grid */
+.article-grid {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 15px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.article-grid::-webkit-scrollbar {
+    display: none;
 }
 
 .article-card {
@@ -857,10 +839,9 @@ footer p {
 
 .article-card img {
     width: 100%;
-    height: 150px;
+    height: 180px;
     object-fit: cover;
     margin-bottom: 15px;
-    background-color: var(--white);
     transition: transform 0.3s ease;
 }
 
@@ -870,9 +851,12 @@ footer p {
 
 .article-card h4 {
     font-size: 16px;
-    margin-bottom: 4px;
+    margin-bottom: 10px;
     font-weight: 500;
+    line-height: 1.4;
+    flex: 1;
 }
+
 
 /* ============================================================
    07. SHOP PAGE
@@ -985,7 +969,7 @@ footer p {
     height: 320px;
     object-fit: cover;
     margin-bottom: 15px;
-    background-color: #F0F0F0;
+    background-color: var(--line);
     transition: transform 0.3s ease;
 }
 
@@ -994,18 +978,15 @@ footer p {
 }
 
 .product-card h5 {
-    font-size: 16px;
-    margin-bottom: 4px;
+    font-size: 14px;
     font-weight: 500;
+    line-height: 1.4;
+    margin: 10px 0 5px 0;
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
     line-clamp: 3;
     overflow: hidden;
-    text-overflow: ellipsis;
-    line-height: 1.4;
-    height: 1.5em;
-    margin: 10px 0 5px 0;
 }
 
 .product-card p {
@@ -1015,7 +996,40 @@ footer p {
     margin-bottom: 10px;
 }
 
-/* Shared Button: View & Read */
+.out-of-stock-card img {
+    opacity: 0.6;
+    filter: grayscale(80%);
+    transition: all 0.3s ease;
+}
+
+/* Pita Sold Out di pojok kiri atas foto */
+.sold-out-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background-color: var(--text-color);
+    color: var(--white);
+    padding: 5px 12px;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    z-index: 10;
+}
+
+/* Tombol yang mati (tidak bisa diklik) */
+.btn-view.disabled-btn {
+    background-color: var(--light-bg);
+    color: var(--line);
+    border: 1px solid var(--subtle-border);
+    cursor: not-allowed;
+    text-align: center;
+}
+
+.btn-view.disabled-btn:hover {
+    background-color: var(--light-bg);
+}
+
+/* Shared: btn-view & btn-read */
 .btn-view,
 .btn-read {
     display: block;
@@ -1073,7 +1087,6 @@ footer p {
 }
 
 /* ---- 7e. Catalog Sidebar ---- */
-
 .catalog-sidebar-overlay {
     position: fixed;
     top: 0;
@@ -1092,7 +1105,6 @@ footer p {
     visibility: visible;
 }
 
-/* Container Box Utama - Putih Bersih & Melebar ke Samping */
 .catalog-sidebar {
     position: fixed;
     top: 0;
@@ -1131,8 +1143,12 @@ footer p {
     padding: 0;
     display: flex;
     align-items: center;
+    transition: color 0.2s ease;
 }
 
+.close-sidebar-btn:hover {
+    color: var(--accent-color);
+}
 
 .sidebar-columns-container {
     display: grid;
@@ -1148,11 +1164,11 @@ footer p {
     gap: 35px;
 }
 
+/* Kolom kanan turun sejajar dengan KOLEKSI */
 .sidebar-column-lane:last-child {
-    padding-top: 60px;
+    padding-top: 72px;
 }
 
-/* Judul Kategori & Koleksi */
 .sidebar-section-link h3.section-title-bold {
     font-size: 15px;
     font-weight: 700;
@@ -1161,6 +1177,11 @@ footer p {
     text-transform: uppercase;
     letter-spacing: 0.5px;
     cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.sidebar-section-link h3.section-title-bold:hover {
+    color: var(--accent-color);
 }
 
 .sidebar-section-link h4.section-title-heading {
@@ -1172,7 +1193,6 @@ footer p {
     letter-spacing: 0.5px;
 }
 
-/* Link Menu List Item */
 .sidebar-section-link ul {
     list-style: none;
     padding: 0;
@@ -1194,30 +1214,308 @@ footer p {
     text-decoration: underline;
 }
 
-/* Indikator Filter yang Sedang Aktif */
 .sidebar-section-link li.active {
     color: var(--accent-color);
     font-weight: 700;
 }
 
-/* Responsif Layar Handphone */
-@media (max-width: 600px) {
-    .catalog-sidebar {
-        max-width: 85%;
-    }
-
-    .sidebar-columns-container {
-        grid-template-columns: 1fr;
-        gap: 25px;
-        padding: 20px 30px;
-    }
-
-    .sidebar-header-premium {
-        padding: 30px 30px 10px 30px;
-        gap: 30px;
-    }
+/* Kotak Sidebar dari Kanan */
+.pull-filter-sidebar {
+    position: fixed;
+    top: 0;
+    right: -450px;
+    /* Menyembunyikan ke sebelah KANAN */
+    width: 100%;
+    max-width: 420px;
+    height: 100vh;
+    background-color: #ffffff;
+    z-index: 9999;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+    transition: right 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    display: flex;
+    flex-direction: column;
+    /* Mengaktifkan struktur Header-Body-Footer */
 }
 
+.pull-filter-sidebar.open {
+    right: 0;
+    /* Bergeser masuk ke dalam layar */
+}
+
+/* 1. Header (Tetap di atas) */
+.pull-sidebar-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px 20px;
+    border-bottom: 1px solid #eeeeee;
+    position: relative;
+}
+
+.pull-sidebar-header h4 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.pull-close-btn {
+    position: absolute;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: #111111;
+    cursor: pointer;
+}
+
+/* Teks label angka harga di atas slider ($0 - $350) */
+.price-range-display {
+    font-size: 13px;
+    font-weight: 400;
+    color: #666666;
+    letter-spacing: 0.5px;
+}
+
+/* Wadah pembungkus slider */
+.pull-price-slider-container {
+    padding: 10px 0 5px 0;
+    width: 100%;
+}
+
+/* Batang Jalur Slider (Garis tipis hitam) */
+.pull-price-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 2px;
+    background: #111111;
+    outline: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: pointer;
+}
+
+/* Bulatan Tombol Geser untuk Chrome, Safari, Edge, Opera */
+.pull-price-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #111111;
+    border: 1px solid #ffffff;
+    /* Lingkaran pembatas putih kecil */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.1s ease;
+}
+
+.pull-price-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.25);
+    /* Efek membesar sedikit saat disentuh kursor */
+}
+
+/* Bulatan Tombol Geser khusus untuk Mozilla Firefox */
+.pull-price-slider::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #111111;
+    border: 1px solid #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.1s ease;
+    cursor: pointer;
+}
+
+.pull-price-slider::-moz-range-thumb:hover {
+    transform: scale(1.25);
+}
+
+/* 2. Body (Bisa di-scroll jika isinya panjang) */
+.pull-sidebar-body {
+    flex: 1;
+    /* Mendorong footer ke bawah */
+    overflow-y: auto;
+    padding: 10px 30px;
+}
+
+.pull-filter-group {
+    border-bottom: 1px solid #eeeeee;
+    padding: 25px 0;
+}
+
+.pull-group-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    color: #111111;
+    margin-bottom: 20px;
+}
+
+.pull-group-head i {
+    font-size: 12px;
+    color: #777;
+}
+
+/* Styling Pilihan Filter berbentuk Chip/Pill */
+.pull-group-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-chip {
+    font-size: 13px;
+    color: #555;
+    padding: 8px 16px;
+    border: 1px solid #eeeeee;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.filter-chip:hover {
+    border-color: #111111;
+    color: #111111;
+}
+
+.filter-chip.active {
+    background-color: #111111;
+    color: #ffffff;
+    border-color: #111111;
+    font-weight: 600;
+}
+
+/* 3. Footer (Tetap menempel di bawah) */
+.pull-sidebar-footer {
+    padding: 25px 30px;
+    border-top: 1px solid #eeeeee;
+    display: flex;
+    flex-direction: column;
+    /* Mengubah tombol bertumpuk */
+    gap: 15px;
+    background-color: #ffffff;
+}
+
+.btn-pull-apply {
+    background-color: #111111;
+    color: #ffffff;
+    border: none;
+    padding: 15px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.2s;
+}
+
+.btn-pull-apply:hover {
+    background-color: #3ea2c7;
+}
+
+.btn-pull-reset {
+    background-color: transparent;
+    color: #111111;
+    border: 1px solid #111111;
+    padding: 15px;
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.2s;
+}
+
+.btn-pull-reset:hover {
+    background-color: #f5f5f5;
+}
+
+.filter-chip.active {
+    background-color: #111111;
+    color: #ffffff;
+    border-color: #111111;
+    font-weight: 600;
+    position: relative;
+    padding-left: 28px;
+    /* Memberi ruang untuk icon centang */
+}
+
+/* Menambahkan icon ✔ secara dinamis menggunakan CSS pseudo-element */
+.filter-chip.active::before {
+    content: '\f00c';
+    /* Kode ikon centang FontAwesome */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 10px;
+    font-size: 11px;
+}
+
+/* ================== FILTER WARNA ================== */
+.color-swatches-container {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Desain Kotak Warna */
+.color-swatch {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    /* Dibuat bulat agar elegan, ubah ke 4px jika ingin kotak */
+    border: 1px solid #dddddd;
+    cursor: pointer;
+    position: relative;
+    transition: transform 0.2s;
+    padding: 0;
+}
+
+.color-swatch:hover {
+    transform: scale(1.1);
+    /* Efek membesar saat disentuh */
+}
+
+/* Cincin indikator jika warna sedang dipilih (active) */
+.color-swatch.active {
+    border: 2px solid #111111;
+    transform: scale(1.15);
+    box-shadow: 0 0 0 2px #ffffff inset;
+    /* Efek cincin pemisah */
+}
+
+/* Pengaturan warna spesifik (Bisa kamu tambah sendiri jika ada warna baru) */
+.color-swatch.black {
+    background-color: #111111;
+}
+
+.color-swatch.white {
+    background-color: #ffffff;
+}
+
+.color-swatch.red {
+    background-color: #580c12;
+}
+
+/* Merah marun khas gotik */
+.color-swatch.DarkChocolate {
+    background-color: #48351b;
+}
+
+/* Responsif HP */
+@media (max-width: 480px) {
+    .pull-filter-sidebar {
+        max-width: 85%;
+    }
+}
 
 /* ============================================================
    08. PRODUCT DETAIL PAGE
@@ -1500,7 +1798,7 @@ footer p {
     grid-template-columns: 80px 340px 1fr;
     gap: 45px;
     align-items: start;
-    border-bottom: 1px solid var(--white);
+    border-bottom: 1px solid var(--subtle-border);
     padding-bottom: 50px;
 }
 
@@ -1521,7 +1819,7 @@ footer p {
     font-size: 42px;
     font-weight: 400;
     color: var(--text-color);
-    line-height: 1.0;
+    line-height: 1;
     margin-top: 4px;
 }
 
@@ -2110,7 +2408,7 @@ footer p {
     align-items: center;
     padding-top: 10px;
     border-top: 1px solid var(--subtle-border);
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 700;
     color: var(--text-color);
     gap: 10px;
@@ -2578,11 +2876,11 @@ footer p {
 /* ============================================================
    14. ADMIN SECTION
    ============================================================
-   Catatan: Warna admin pakai hardcoded hex karena tema
-   tersendiri (biru-gelap), berbeda dari brand Ophelia.
+   Warna admin pakai hardcoded hex — tema biru-gelap tersendiri,
+   berbeda dari brand palette Ophelia.
    ============================================================ */
 
-/* Admin Login */
+/* ---- 14a. Admin Login ---- */
 .admin-login-page-wrapper {
     width: 100%;
     min-height: 100vh;
@@ -2722,7 +3020,7 @@ footer p {
     letter-spacing: 0.5px;
 }
 
-/* Admin Dashboard */
+/* ---- 14b. Admin Dashboard ---- */
 .ref-admin-dashboard {
     width: 100%;
     min-height: 100vh;
@@ -2874,7 +3172,7 @@ footer p {
     height: 32px;
     border-radius: 50%;
     background-color: #ffdd57;
-    color: var(--text-color);
+    color: #111;
     font-size: 12px;
     font-weight: 700;
     display: flex;
@@ -3087,9 +3385,7 @@ footer p {
     color: #3ea2c7 !important;
 }
 
-/* ==========================================================================
-   ADMIN POP-UP MODAL (CREATE & UPDATE)
-   ========================================================================== */
+/* ---- 14c. Admin Modal ---- */
 .ref-modal-overlay {
     position: fixed;
     top: 0;
@@ -3097,24 +3393,12 @@ footer p {
     width: 100vw;
     height: 100vh;
     background-color: rgba(15, 17, 21, 0.7);
-    /* Efek gelap transparan di belakang pop-up */
     z-index: 9999;
     display: flex;
     justify-content: center;
     align-items: center;
     backdrop-filter: blur(4px);
-    /* Efek blur ala Apple/Modern Web */
     animation: fadeInModal 0.2s ease-out;
-}
-
-@keyframes fadeInModal {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
 }
 
 .ref-modal-content {
@@ -3125,18 +3409,6 @@ footer p {
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     animation: slideUpModal 0.3s ease-out;
-}
-
-@keyframes slideUpModal {
-    from {
-        transform: translateY(20px);
-        opacity: 0;
-    }
-
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
 }
 
 .ref-modal-header {
@@ -3267,10 +3539,8 @@ footer p {
 
 .ref-form-upload label:first-child {
     margin-top: 0;
-    /* Menghapus jarak atas untuk label pertama */
 }
 
-/* Styling area kotak input file */
 .ref-form-upload input[type="file"] {
     font-size: 13px;
     color: #555;
@@ -3284,13 +3554,11 @@ footer p {
     box-sizing: border-box;
 }
 
-/* Efek saat form dilewati kursor (hover) menggunakan biru andalanmu */
 .ref-form-upload input[type="file"]:hover {
     border-color: #3ea2c7;
     background-color: #f0f8ff;
 }
 
-/* Styling khusus untuk tombol "Choose File" / "Browse" bawaan browser */
 .ref-form-upload input[type="file"]::file-selector-button {
     margin-right: 15px;
     padding: 6px 14px;
@@ -3339,6 +3607,10 @@ footer p {
     .journal-row-card {
         grid-template-columns: 60px 260px 1fr;
         gap: 25px;
+    }
+
+    .about-us {
+        gap: 40px;
     }
 
     .ref-admin-layout {
@@ -3420,7 +3692,6 @@ footer p {
 
     .new-arrivals h2 {
         font-size: 20px;
-        margin-bottom: 15px;
     }
 
     .product-grid {
@@ -3438,7 +3709,7 @@ footer p {
     }
 
     .product-card h5 {
-        font-size: 13px;
+        font-size: 12px;
     }
 
     .product-card p {
@@ -3485,14 +3756,29 @@ footer p {
         height: 220px;
     }
 
-    /* Articles (Home) */
+    /* About Us */
+    .about-us {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 30px 4%;
+    }
+
+    .about-image {
+        aspect-ratio: 16 / 9;
+    }
+
+    .about-content h2 {
+        font-size: 24px;
+    }
+
+    /* Articles slider */
     .articles {
         padding: 30px 4% 50px;
     }
 
-    .article-grid {
-        grid-template-columns: 1fr;
-        gap: 15px;
+    .article-card {
+        min-width: 80vw;
+        flex: 0 0 80vw;
     }
 
     /* Journal */
@@ -3587,7 +3873,26 @@ footer p {
         padding: 28px 20px;
     }
 
-    /* Category Burger */
+    /* Sidebar */
+    .catalog-sidebar {
+        max-width: 85%;
+    }
+
+    .sidebar-columns-container {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 20px 30px;
+    }
+
+    .sidebar-column-lane:last-child {
+        padding-top: 0;
+    }
+
+    .sidebar-header-premium {
+        padding: 30px 30px 10px 30px;
+        gap: 30px;
+    }
+
     .category-burger-btn {
         padding: 16px 20px;
     }
@@ -3605,8 +3910,6 @@ footer p {
         flex-direction: column;
         align-items: flex-start;
         gap: 16px;
-        padding-bottom: 20px;
-        margin-bottom: 28px;
     }
 
     .btn-customer-logout {
@@ -3723,11 +4026,11 @@ footer p {
     }
 
     .product-card img {
-        height: 170px;
+        height: 160px;
     }
 
     .product-card h5 {
-        font-size: 12px;
+        font-size: 11px;
     }
 
     .product-card p {
@@ -3741,6 +4044,21 @@ footer p {
 
     .collection-card.big-card {
         height: 195px;
+    }
+
+    /* About */
+    .about-content h2 {
+        font-size: 20px;
+    }
+
+    .about-content p {
+        font-size: 14px;
+    }
+
+    /* Articles slider */
+    .article-card {
+        min-width: 88vw;
+        flex: 0 0 88vw;
     }
 
     /* Cart Drawer */

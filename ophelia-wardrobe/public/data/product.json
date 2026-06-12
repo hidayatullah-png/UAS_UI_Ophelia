@@ -1,12 +1,13 @@
 [
     {
         "id": 1,
-        "name": "Midnight Elegance Dress",
+        "name": "Midnight Elegance Gown",
         "price": 249.99,
-        "category": "Lolita",
-        "itemType": "Dress",
+        "category": "Vampire",
+        "itemType": "Gown",
         "isNewArrival": true,
         "image": "assets/dress1.png",
+        "color": "Black",
         "stock": 5,
         "description": "A premium elegant gothic dress with beautiful dark frills, built-in corset structure, and a dramatic silhouette perfect for alternative subculture gatherings.",
         "model": "Height 177 cm and size M"
@@ -15,12 +16,14 @@
         "id": 2,
         "name": "Gothic Victorian Gown",
         "price": 199.00,
-        "category": "Gothic Gown",
+        "category": "Victorian",
         "itemType": "Gown",
-        "isNewArrival": false,
+        "isNewArrival": true,
         "image": "assets/dress2.png",
+        "color": "Dark Chocolate",
         "stock": 3,
-        "description": "Ornate Victorian-inspired lace gown featuring high-quality velvet, adjustable back lacings, and elegant multi-layered cascading ruffles."
+        "description": "Ornate Victorian-inspired lace gown featuring high-quality velvet, adjustable back lacings, and elegant multi-layered cascading ruffles.",
+        "model": "Height 170 cm and size M"
     },
     {
         "id": 3,
@@ -30,8 +33,11 @@
         "itemType": "Suit",
         "isNewArrival": true,
         "image": "assets/dress3.png",
+        "color": "Dark Chocolate",
         "stock": 8,
-        "description": "A sharp, tailored royal prince ensemble. Includes a structured vest with silver metallic hardware details and drop-waist alternative trousers."
+        "description": "A sharp, tailored royal prince ensemble. Includes a structured vest with silver metallic hardware details and drop-waist alternative trousers.",
+        "model": "Height 178 cm and size M"
+
     },
     {
         "id": 4,
@@ -39,54 +45,64 @@
         "price": 120.00,
         "category": "Lolita",
         "itemType": "Dress",
-        "isNewArrival": false,
+        "isNewArrival": true,
         "image": "assets/dress4.png",
+        "color": "White",
         "stock": 12,
-        "description": "A stunning and unique doll-like printed dress. Features a signature aesthetic design combining innocent frills with subculture dark undertones."
+        "description": "A stunning and unique doll-like printed dress. Features a signature aesthetic design combining innocent frills with subculture dark undertones.",
+        "model":"Height 160 cm and size S"
     },
     {
         "id": 5,
-        "name": "White Ouji Lolita Long Waistcoat",
+        "name": "White Ouji Long-Sleeved Suit",
         "price": 150.00,
         "category": "Ouji",
         "itemType": "Suit",
         "isNewArrival": false,
         "image": "assets/dress5.png",
+        "color": "White",
         "stock": 4,
-        "description": "An elegant, long-cut white vest piece blending high-fashion aristocratic tailoring with premium gothic community comfort elements."
+        "description": "An elegant, long-cut white vest piece blending high-fashion aristocratic tailoring with premium gothic community comfort elements.",
+        "model":"Height 176 cm and size M"
     },
     {
         "id": 6,
-        "name": "Devil Ruffle Sleeves Victorian Dress",
-        "price": 299.00,
-        "category": "Gothic Dress",
-        "itemType": "Dress",
-        "isNewArrival": true,
-        "image": "assets/dress6.png",
-        "stock": 2,
-        "description": "A masterpiece of alternative fashion featuring dramatic flared devil bell sleeves, heavy tier brocade laces, and unmatched dark elegance styling."
-    },
-    {
-        "id": 7,
-        "name": "Gothic Feathered Suit",
-        "price": 299.00,
-        "category": "Gothic Suit",
-        "itemType": "Suit",
-        "isNewArrival": true,
-        "image": "assets/dress7.png",
-        "stock": 2,
-        "description": "A statement gothic suit with feathered shoulder accents, intricate embroidery, and a tailored fit that exudes dark sophistication and alternative style."
-    },
-    {
-        "id": 8,
-        "name": "Halloween Themed Rose And Skull Dress",
+        "name": "Devil Ruffle Sleeves Victorian Gown",
         "price": 299.00,
         "category": "Gothic Dress",
         "itemType": "Dress",
         "isNewArrival": false,
-        "image": "assets/dress8.png",
+        "image": "assets/dress6.png",
+        "color": "Red",
         "stock": 2,
-        "description": "A hauntingly beautiful dress adorned with rose and skull motifs, perfect for Halloween or any gothic occasion. Features a dramatic silhouette and intricate detailing for a truly unique look."
+        "description": "A masterpiece of alternative fashion featuring dramatic flared devil bell sleeves, heavy tier brocade laces, and unmatched dark elegance styling.",
+        "model":"Height 180 cm and size M"
+    },
+    {
+        "id": 7,
+        "name": "Gothic Feathered Punk",
+        "price": 299.00,
+        "category": "Punk",
+        "itemType": "Suit",
+        "isNewArrival": false,
+        "image": "assets/dress7.png",
+        "color": "Black",
+        "stock": 2,
+        "description": "A statement gothic suit with feathered shoulder accents, intricate embroidery, and a tailored fit that exudes dark sophistication and alternative style.",
+        "model":"Height 176 cm and size M"
+    },
+    {
+        "id": 8,
+        "name": "Halloween Themed Rose And Skull Gown",
+        "price": 299.00,
+        "category": "Gown",
+        "itemType": "Gown",
+        "isNewArrival": false,
+        "image": "assets/dress8.png",
+        "color": "Red",
+        "stock": 2,
+        "description": "A hauntingly beautiful dress adorned with rose and skull motifs, perfect for Halloween or any gothic occasion. Features a dramatic silhouette and intricate detailing for a truly unique look.",
+        "model":"Height 176 cm and size XL"
     },
     {
         "id": 9,
