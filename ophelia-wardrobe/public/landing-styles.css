@@ -1517,6 +1517,39 @@ footer p {
     }
 }
 
+/* --- TAMBAHAN UNTUK FILTER BULAN --- */
+
+/* Menambahkan jarak antar tombol list dan month */
+.filter-right-views {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Pembungkus agar dropdown melayang tepat di bawah tombol */
+.month-dropdown-wrapper {
+    position: relative;
+}
+
+/* Styling untuk kotak dropdown */
+.month-dropdown-select {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 8px;
+    padding: 8px 12px;
+    background-color: #ffffff;
+    border: 1px solid var(--accent-color);
+    border-radius: 8px;
+    color: var(--text-color);
+    font-family: inherit;
+    cursor: pointer;
+    outline: none;
+    z-index: 10;
+    min-width: 130px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 /* ============================================================
    08. PRODUCT DETAIL PAGE
    ============================================================ */
@@ -1776,13 +1809,16 @@ footer p {
     cursor: pointer;
     text-transform: uppercase;
     padding: 5px 0;
-    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.25s ease;
 }
 
 .view-toggle-btn.active-views,
 .view-toggle-btn:hover {
-    color: var(--text-color);
-    border-bottom: 2px solid var(--text-color);
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
 }
 
 .journal-grid {
@@ -2036,6 +2072,119 @@ footer p {
     text-align: justify;
 }
 
+
+/* --- TAMBAHAN UNTUK FILTER BULAN & PENULIS --- */
+.filter-right-views {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Pembungkus agar dropdown melayang tepat di bawah tombol */
+.filter-dropdown-wrapper {
+    position: relative;
+}
+
+/* Tombol toggle - sedikit polish tambahan */
+.view-toggle-btn {
+    transition: all 0.25s ease;
+}
+
+/* Styling untuk kotak dropdown */
+.filter-dropdown-select {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 10px;
+    padding: 10px 36px 10px 14px;
+    background-color: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    color: #333333;
+    font-family: inherit;
+    font-size: 0.9rem;
+    letter-spacing: 0.2px;
+    cursor: pointer;
+    outline: none;
+    z-index: 10;
+    min-width: 180px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12), 0 2px 6px rgba(0, 0, 0, 0.06);
+
+    /* hilangkan tampilan default browser & tambah panah custom */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'><path d='M1 1L6 6L11 1' stroke='%23999' stroke-width='1.6' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+
+    /* animasi muncul */
+    animation: dropdownFadeIn 0.18s ease-out;
+    transform-origin: top right;
+}
+
+.filter-dropdown-select:hover {
+    border-color: var(--accent-color);
+}
+
+.filter-dropdown-select:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.14), 0 0 0 3px rgba(0, 0, 0, 0.05);
+}
+
+.filter-dropdown-select option {
+    padding: 8px;
+    color: #333333;
+    background-color: #ffffff;
+}
+
+@keyframes dropdownFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-6px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* ============================================================
+    POSION
+   ============================================================ */
+.poison-coming-soon {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: #0a0a0a;
+    color: #fff;
+    padding: 40px 20px;
+}
+
+.poison-eyebrow {
+    display: block;
+    letter-spacing: 3px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 10px;
+}
+
+.poison-coming-soon h1 {
+    font-size: 3.5rem;
+    letter-spacing: 8px;
+    margin-bottom: 20px;
+}
+
+.poison-dots {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    opacity: 0.6;
+    text-transform: uppercase;
+}
 
 /* ============================================================
    11. PROFILE & LOGIN PAGE

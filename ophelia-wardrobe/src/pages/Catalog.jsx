@@ -1,21 +1,23 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Catalog() {
     const [products, setProducts] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const productsPerPage = 8;
 
+    const navigate = useNavigate();
+
     const [isLeftSidebarOpen, setIsLeftSidebarOpen] = useState(false);
     const [isRightSidebarOpen, setIsRightSidebarOpen] = useState(false);
 
     // ====================================================================
-    // 🛠️ 1. STATE MULTI-SELECT BARU (MENGGANTIKAN activeFilter LAMA)
+    // 🛠️ 1. STATE MULTI-SELECT 
     // ====================================================================
     const [selectedCollections, setSelectedCollections] = useState([]);
     const [selectedCategories, setSelectedCategories] = useState([]);
     const [selectedColors, setSelectedColors] = useState([]);
-    const [maxPrice, setMaxPrice] = useState(1000);
+    const [maxPrice, setMaxPrice] = useState(500);
     const [showNewArrivalsOnly, setShowNewArrivalsOnly] = useState(false);
 
     useEffect(() => {
@@ -37,10 +39,9 @@ export default function Catalog() {
         if (showNewArrivalsOnly && !product.isNewArrival) return false;
 
         // C. Filter Koleksi (Jika array kosong, berarti tampilkan semua. Jika tidak, cek apakah cocok)
-        if (selectedCollections.length > 0 && !selectedCollections.includes(product.itemType)) return false;
-
+        if (selectedCollections.length > 0 && !product.itemType.some(type => selectedCollections.includes(type))) return false;
         // D. Filter Kategori
-        if (selectedCategories.length > 0 && !selectedCategories.includes(product.category)) return false;
+        if (selectedCategories.length > 0 && !product.category.some(cat => selectedCategories.includes(cat))) return false;
 
         // E. Filter Warna (Pastikan ada data "color" di JSON kamu nanti)
         if (selectedColors.length > 0 && !selectedColors.includes(product.color)) return false;
@@ -86,11 +87,19 @@ export default function Catalog() {
         setSelectedCollections([]);
         setSelectedCategories([]);
         setSelectedColors([]);
-        setMaxPrice(350);
+        setMaxPrice(400);
         setShowNewArrivalsOnly(false);
         setCurrentPage(1);
         setIsRightSidebarOpen(false);
     };
+
+    //cek apakah ada filter yang aktif
+    const isFilterActive =
+        selectedCollections.length > 0 ||
+        selectedCategories.length > 0 ||
+        selectedColors.length > 0 ||
+        showNewArrivalsOnly ||
+        maxPrice < 400;
 
     return (
         <div className="new-arrivals" style={{ position: "relative" }}>
@@ -114,7 +123,7 @@ export default function Catalog() {
                             <h3 className="section-title-bold" onClick={() => applySingleFilterLeft("NewArrival", "All")}>
                                 New Arrivals
                             </h3>
-                            <h3 className="section-title-bold" onClick={() => applySingleFilterLeft("POISON", "POISON")}>
+                            <h3 className="section-title-bold" onClick={() => navigate("/poison")}>
                                 POISON
                             </h3>
                         </div>
@@ -125,7 +134,6 @@ export default function Catalog() {
                                 <li className={selectedCollections.includes("Gown") ? "active" : ""} onClick={() => applySingleFilterLeft("Collection", "Gown")}>Gown</li>
                                 <li className={selectedCollections.includes("Suit") ? "active" : ""} onClick={() => applySingleFilterLeft("Collection", "Suit")}>Suit</li>
                                 <li className={selectedCollections.includes("Waistcoat") ? "active" : ""} onClick={() => applySingleFilterLeft("Collection", "Waistcoat")}>Waistcoat</li>
-                                <li className={selectedCollections.includes("Corset") ? "active" : ""} onClick={() => applySingleFilterLeft("Collection", "Corset")}>Korset</li>
                             </ul>
                         </div>
                     </div>
@@ -133,12 +141,13 @@ export default function Catalog() {
                         <div className="sidebar-section-link">
                             <h4 className="section-title-heading">Kategori</h4>
                             <ul>
-                                <li className={selectedCategories.includes("Lolita") ? "active" : ""} onClick={() => applySingleFilterLeft("Category", "Lolita")}>Lolita Style</li>
+                                <li className={selectedCategories.includes("Vampire") ? "active" : ""} onClick={() => applySingleFilterLeft("Category", "Vampire")}>Vampire</li>
+                                <li className={selectedCategories.includes("Victorian") ? "active" : ""} onClick={() => applySingleFilterLeft("Category", "Victorian")}>Victorian</li>
                                 <li className={selectedCategories.includes("Ouji") ? "active" : ""} onClick={() => applySingleFilterLeft("Category", "Ouji")}>Ouji Style</li>
-                                <li className={selectedCategories.includes("Dress") ? "active" : ""} onClick={() => applySingleFilterLeft("Category", "Dress")}>Dress</li>
-                                <li className={selectedCategories.includes("Gown") ? "active" : ""} onClick={() => applySingleFilterLeft("Category", "Gown")}>Gown</li>
-                                <li className={selectedCategories.includes("Suit") ? "active" : ""} onClick={() => applySingleFilterLeft("Category", "Suit")}>Suit</li>
-                                <li className={selectedCategories.includes("Waistcoat") ? "active" : ""} onClick={() => applySingleFilterLeft("Category", "Waistcoat")}>Waistcoat</li>
+                                <li className={selectedCategories.includes("Lolita") ? "active" : ""} onClick={() => applySingleFilterLeft("Category", "Lolita")}>Lolita Style</li>
+                                <li className={selectedCategories.includes("Gothic") ? "active" : ""} onClick={() => applySingleFilterLeft("Category", "Gothic")}>Gothic</li>
+                                <li className={selectedCategories.includes("Punk") ? "active" : ""} onClick={() => applySingleFilterLeft("Category", "Punk")}>Punk</li>
+                                <li className={selectedCategories.includes("Halloween") ? "active" : ""} onClick={() => applySingleFilterLeft("Category", "Halloween")}>Halloween</li>
                             </ul>
                         </div>
                     </div>
@@ -167,7 +176,7 @@ export default function Catalog() {
                         <div className="pull-price-slider-container">
                             <input
                                 type="range"
-                                min="0" max="350" step="10"
+                                min="0" max="400" step="10"
                                 value={maxPrice}
                                 onChange={(e) => { setMaxPrice(Number(e.target.value)); setCurrentPage(1); }}
                                 className="pull-price-slider"
@@ -195,9 +204,9 @@ export default function Catalog() {
                         <div className="pull-group-content">
                             <span className={showNewArrivalsOnly ? "filter-chip active" : "filter-chip"} onClick={() => { setShowNewArrivalsOnly(!showNewArrivalsOnly); setCurrentPage(1); }}> New Arrivals</span>
                             <span className={selectedCollections.includes("Dress") ? "filter-chip active" : "filter-chip"} onClick={() => toggleFilter(selectedCollections, setSelectedCollections, "Dress")}>Dress</span>
+                            <span className={selectedCollections.includes("Gown") ? "filter-chip active" : "filter-chip"} onClick={() => toggleFilter(selectedCollections, setSelectedCollections, "Gown")}>Gown</span>
                             <span className={selectedCollections.includes("Suit") ? "filter-chip active" : "filter-chip"} onClick={() => toggleFilter(selectedCollections, setSelectedCollections, "Suit")}>Suit</span>
                             <span className={selectedCollections.includes("Waistcoat") ? "filter-chip active" : "filter-chip"} onClick={() => toggleFilter(selectedCollections, setSelectedCollections, "Waistcoat")}>Waistcoat</span>
-                            <span className={selectedCollections.includes("Corset") ? "filter-chip active" : "filter-chip"} onClick={() => toggleFilter(selectedCollections, setSelectedCollections, "Corset")}>Corset</span>
                         </div>
                     </div>
 
@@ -207,8 +216,8 @@ export default function Catalog() {
                         <div className="pull-group-content">
                             <span className={selectedCategories.includes("Lolita") ? "filter-chip active" : "filter-chip"} onClick={() => toggleFilter(selectedCategories, setSelectedCategories, "Lolita")}>Lolita Style</span>
                             <span className={selectedCategories.includes("Ouji") ? "filter-chip active" : "filter-chip"} onClick={() => toggleFilter(selectedCategories, setSelectedCategories, "Ouji")}>Ouji Style</span>
-                            <span className={selectedCategories.includes("Gothic Dress") ? "filter-chip active" : "filter-chip"} onClick={() => toggleFilter(selectedCategories, setSelectedCategories, "Gothic Dress")}>Gothic Dress</span>
-                            <span className={selectedCategories.includes("Gothic Suit") ? "filter-chip active" : "filter-chip"} onClick={() => toggleFilter(selectedCategories, setSelectedCategories, "Gothic Suit")}>Gothic Suit</span>
+                            <span className={selectedCategories.includes("Gothic") ? "filter-chip active" : "filter-chip"} onClick={() => toggleFilter(selectedCategories, setSelectedCategories, "Gothic")}>Gothic Style</span>
+                            <span className={selectedCategories.includes("Punk") ? "filter-chip active" : "filter-chip"} onClick={() => toggleFilter(selectedCategories, setSelectedCategories, "Punk")}>Punk Style</span>
                         </div>
                     </div>
 
@@ -235,9 +244,11 @@ export default function Catalog() {
                 </button>
             </div>
 
-            <p className="new-arrivals-text" style={{ textAlign: "center", marginBottom: "30px", marginTop: "10px" }}>
-                All Product
-            </p>
+            {!isFilterActive && (
+                <p className="new-arrivals-text" style={{ textAlign: "center", marginBottom: "30px", marginTop: "10px" }}>
+                    All Product
+                </p>
+            )}
 
             {/* ================= GRID PRODUK ================= */}
             <div className="product-grid">

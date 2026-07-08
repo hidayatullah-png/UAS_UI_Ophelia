@@ -11,6 +11,7 @@ import AdminDashboard from "./pages/AdminDashboard";
 import Register from "./pages/Register";
 import ForgotPassword from "./pages/ForgotPassword";
 import Collections from "./pages/Collection";
+import Poison from "./pages/Poison";
 
 // Komponen PromoBanner
 function PromoBanner({ showBanner, setShowBanner }) {
@@ -313,6 +314,7 @@ function AppContent({
             setTransactionHistory={setTransactionHistory}
           />
         } />
+        <Route path="/poison" element={<Poison />} />
         <Route path="/admin" element={<AdminDashboard transactionHistory={transactionHistory} />} />
       </Routes>
       {(!isAdminPage && (
@@ -368,13 +370,13 @@ export default function App() {
             {
               id: 3,
               name: "Modern Ouji-Style Suit",
-              price: 159.00,
+              price: 159.99,
               image: "assets/dress3.png",
               size: "L",
               qty: 1
             }
           ],
-          totalBill: 408.99
+          totalBill: 409.98
         },
         {
           orderId: "OPH-204115",
