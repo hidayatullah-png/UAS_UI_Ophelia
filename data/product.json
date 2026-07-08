@@ -3,8 +3,12 @@
         "id": 1,
         "name": "Midnight Elegance Gown",
         "price": 249.99,
-        "category": "Vampire",
-        "itemType": "Gown",
+        "category": [
+            "Vampire"
+        ],
+        "itemType": [
+            "Gown"
+        ],
         "isNewArrival": true,
         "image": "assets/dress1.png",
         "color": "Black",
@@ -15,9 +19,13 @@
     {
         "id": 2,
         "name": "Gothic Victorian Gown",
-        "price": 199.00,
-        "category": "Victorian",
-        "itemType": "Gown",
+        "price": 199.99,
+        "category": [
+            "Victorian"
+        ],
+        "itemType": [
+            "Gown"
+        ],
         "isNewArrival": true,
         "image": "assets/dress2.png",
         "color": "Dark Chocolate",
@@ -28,91 +36,228 @@
     {
         "id": 3,
         "name": "Modern Ouji-Style Suit",
-        "price": 159.00,
-        "category": "Ouji",
-        "itemType": "Suit",
+        "price": 159.99,
+        "category": [
+            "Ouji"
+        ],
+        "itemType": [
+            "Suit"
+        ],
         "isNewArrival": true,
         "image": "assets/dress3.png",
         "color": "Dark Chocolate",
         "stock": 8,
         "description": "A sharp, tailored royal prince ensemble. Includes a structured vest with silver metallic hardware details and drop-waist alternative trousers.",
         "model": "Height 178 cm and size M"
-
     },
     {
         "id": 4,
         "name": "Bloodied Lolita Dress",
-        "price": 120.00,
-        "category": "Lolita",
-        "itemType": "Dress",
+        "price": 129.99,
+        "category": [
+            "Lolita"
+        ],
+        "itemType": [
+            "Dress"
+        ],
         "isNewArrival": true,
         "image": "assets/dress4.png",
         "color": "White",
         "stock": 12,
         "description": "A stunning and unique doll-like printed dress. Features a signature aesthetic design combining innocent frills with subculture dark undertones.",
-        "model":"Height 160 cm and size S"
+        "model": "Height 160 cm and size S"
     },
     {
         "id": 5,
         "name": "White Ouji Long-Sleeved Suit",
-        "price": 150.00,
-        "category": "Ouji",
-        "itemType": "Suit",
+        "price": 159.99,
+        "category": [
+            "Ouji"
+        ],
+        "itemType": [
+            "Suit",
+            "Waistcoat"
+        ],
         "isNewArrival": false,
         "image": "assets/dress5.png",
         "color": "White",
         "stock": 4,
         "description": "An elegant, long-cut white vest piece blending high-fashion aristocratic tailoring with premium gothic community comfort elements.",
-        "model":"Height 176 cm and size M"
+        "model": "Height 176 cm and size M"
     },
     {
         "id": 6,
         "name": "Devil Ruffle Sleeves Victorian Gown",
-        "price": 299.00,
-        "category": "Gothic Dress",
-        "itemType": "Dress",
+        "price": 299.99,
+        "category": [
+            "Gothic",
+            "Victorian"
+        ],
+        "itemType": [
+            "Dress"
+        ],
         "isNewArrival": false,
         "image": "assets/dress6.png",
         "color": "Red",
-        "stock": 2,
+        "stock": 3,
         "description": "A masterpiece of alternative fashion featuring dramatic flared devil bell sleeves, heavy tier brocade laces, and unmatched dark elegance styling.",
-        "model":"Height 180 cm and size M"
+        "model": "Height 180 cm and size M"
     },
     {
         "id": 7,
         "name": "Gothic Feathered Punk",
-        "price": 299.00,
-        "category": "Punk",
-        "itemType": "Suit",
+        "price": 295.99,
+        "category": [
+            "Punk",
+            "Gothic"
+        ],
+        "itemType": [
+            "Suit"
+        ],
         "isNewArrival": false,
         "image": "assets/dress7.png",
         "color": "Black",
-        "stock": 2,
+        "stock": 4,
         "description": "A statement gothic suit with feathered shoulder accents, intricate embroidery, and a tailored fit that exudes dark sophistication and alternative style.",
-        "model":"Height 176 cm and size M"
+        "model": "Height 176 cm and size M"
     },
     {
         "id": 8,
         "name": "Halloween Themed Rose And Skull Gown",
-        "price": 299.00,
-        "category": "Gown",
-        "itemType": "Gown",
+        "price": 229.99,
+        "category": [
+            "Halloween",
+            "Gothic"
+        ],
+        "itemType": [
+            "Gown"
+        ],
         "isNewArrival": false,
         "image": "assets/dress8.png",
         "color": "Red",
         "stock": 2,
         "description": "A hauntingly beautiful dress adorned with rose and skull motifs, perfect for Halloween or any gothic occasion. Features a dramatic silhouette and intricate detailing for a truly unique look.",
-        "model":"Height 176 cm and size XL"
+        "model": "Height 176 cm and size XL"
     },
     {
         "id": 9,
-        "name": "Devil Ruffle Sleeves Victorian Dress",
-        "price": 299.00,
-        "category": "Gothic Dress",
-        "itemType": "Dress",
+        "name": "Dark Victorian Gothic Dress",
+        "price": 299.99,
+        "category": [
+            "Gothic",
+            "Victorian"
+        ],
+        "itemType": [
+            "Gown"
+        ],
         "isNewArrival": false,
         "image": "assets/dress9.png",
+        "color": "Black",
         "stock": 2,
-        "description": "A masterpiece of alternative fashion featuring dramatic flared devil bell sleeves, heavy tier brocade laces, and unmatched dark elegance styling."
+        "description": "A masterpiece of Victorian-inspired fashion featuring dramatic gothic style, heavy tier brocade laces, and unmatched dark elegance styling.",
+        "model": "Height 176 cm and size XL"
+    },
+    {
+        "id": 10,
+        "name": "Nightfall Master Black Dress",
+        "price": 399.99,
+        "category": [
+            "Gothic"
+        ],
+        "itemType": [
+            "Gown"
+        ],
+        "isNewArrival": false,
+        "image": "assets/dress10.png",
+        "color": "Black",
+        "stock": 3,
+        "description": "Ling Xi Nightfall Master Black Fishbone Top, Tailing Skirt (detachable tailing), Fur Cape and Hat",
+        "model": "Height 175 cm and size XL"
+    },
+    {
+        "id": 11,
+        "name": "Gothic Styled Lolita Dress",
+        "price": 379.99,
+        "category": [
+            "Gothic",
+            "Lolita"
+        ],
+        "itemType": [
+            "Dress"
+        ],
+        "isNewArrival": false,
+        "image": "assets/dress11.png",
+        "color": "Black",
+        "stock": 5,
+        "description": "Featuring intricate layers of ruffles, lace, a corseted top, layered trumpet sleeves, a high collar with a large bow, and a bonnet/headdress complete with a matching lace veil.",
+        "model": "Height 165 cm and size M"
+    },
+    {
+        "id": 12,
+        "name": "Black and Gold Corseted Lolita Dress",
+        "price": 259.99,
+        "category": [
+            "Lolita"
+        ],
+        "itemType": [
+            "Dress"
+        ],
+        "isNewArrival": false,
+        "image": "assets/dress12.png",
+        "color": "Black",
+        "stock": 2,
+        "description": "Featuring a tight, slim bodice with a halter neck and black bow tie, and a super short, voluminous flared skirt adorned with shiny, ruffled, textured gold/copper metallic accents.",
+        "model": "Height 165 cm and size M"
+    },
+    {
+        "id": 13,
+        "name": "Edwardian Gothic Suit",
+        "price": 329.99,
+        "category": [
+            "Gothic"
+        ],
+        "itemType": [
+            "Suit"
+        ],
+        "isNewArrival": false,
+        "image": "assets/dress13.png",
+        "color": "Black",
+        "stock": 2,
+        "description": "A suit that accurately takes inspiration from 19th century Victorian or Edwardian menswear, but with a dominant color palette of jet black and deep maroon.",
+        "model": "Height 185 cm and size XL"
+    },
+    {
+        "id": 14,
+        "name": "Dark Victorian Ouji Waistcoat",
+        "price": 229.99,
+        "category": [
+            "Ouji"
+        ],
+        "itemType": [
+            "Waistcoat"
+        ],
+        "isNewArrival": false,
+        "image": "assets/dress14.png",
+        "color": "Black",
+        "stock": 7,
+        "description": "A suit that accurately takes inspiration from 19th century Victorian or Edwardian menswear, but with a dominant color palette of jet black and deep maroon.",
+        "model": "Height 185 cm and size XL"
+    },
+    {
+        "id": 15,
+        "name": "Ouji Style Waistcoat With Blue Raffles",
+        "price": 219.99,
+        "category": [
+            "Ouji"
+        ],
+        "itemType": [
+            "Waistcoat"
+        ],
+        "isNewArrival": false,
+        "image": "assets/dress15.png",
+        "color": "Black",
+        "stock": 2,
+        "description": "A suit that accurately takes inspiration from 19th century Victorian or Edwardian menswear, but with a dominant color palette of jet black and deep maroon.",
+        "model": "Height 170 cm and size XL"
     }
 ]
